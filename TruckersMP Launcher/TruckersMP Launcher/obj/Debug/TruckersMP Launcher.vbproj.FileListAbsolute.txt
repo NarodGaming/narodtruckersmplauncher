@@ -28,3 +28,4 @@ C:\Users\ajfau\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP 
 C:\Users\ajfau\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\TruckersMP_Launcher.Resources.resources
 C:\Users\ajfau\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\TruckersMP_Launcher.Rules_Popup.resources
 C:\Users\ajfau\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\TruckersMP Launcher.vbproj.GenerateResource.Cache
+C:\Users\ajfau\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\bin\Debug\Yet Another TruckersMP Launcher.exe.config

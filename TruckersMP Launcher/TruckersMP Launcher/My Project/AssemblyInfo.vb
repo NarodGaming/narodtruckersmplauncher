@@ -8,12 +8,12 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Narod's TruckersMP Server Checker")>
-<Assembly: AssemblyDescription("Check the status of TruckersMP servers, with a passthrough to TruckersMP Launcher.")>
-<Assembly: AssemblyCompany("NarodGaming Limited")>
-<Assembly: AssemblyProduct("TruckersMP Server Checked")>
-<Assembly: AssemblyCopyright("Copyright © NarodGaming Ltd.  2017")>
-<Assembly: AssemblyTrademark("ALL RIGHTS RESERVED")>
+<Assembly: AssemblyTitle("YART")>
+<Assembly: AssemblyDescription("Yet Another TruckersMP Launcher")>
+<Assembly: AssemblyCompany("NarodGaming Ltd.")>
+<Assembly: AssemblyProduct("YART")>
+<Assembly: AssemblyCopyright("")>
+<Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
