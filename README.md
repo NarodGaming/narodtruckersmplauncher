@@ -1,5 +1,6 @@
-# Narod's TruckersMP Launcher
-Yet another launcher for TruckersMP.
+# YART (Yet Another Launcher for TruckersMP)
+
+by NarodGaming
 
 This launcher provides all of the API functionality you could want!
 
@@ -9,6 +10,10 @@ This launcher provides all of the API functionality you could want!
 - Look at others bans, if they are banned etc.
 - See if your clients need an update
 - Check the server status's
+
+# Downloading
+
+You can find releases here: https://github.com/NarodGaming/narodtruckersmplauncher/releases
 
 # Looking for help
 
