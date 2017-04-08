@@ -103,7 +103,10 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim checkversion As WebClient = New WebClient()
         checkversion.CachePolicy = New System.Net.Cache.RequestCachePolicy(Cache.RequestCacheLevel.NoCacheNoStore)
-        checkversion.Headers.Add("Cache-Control", "no-cache")
+        checkversion.Headers.Add("Cache-control", "no-cache")
+        checkversion.Headers.Add("Cache-control", "no-store")
+        checkversion.Headers.Add("pragma", "no-cache")
+        checkversion.Headers.Add("Expries", "-1")
         Dim versionresponse As String = checkversion.DownloadString("https://raw.githubusercontent.com/NarodGaming/narodtruckersmplauncher/master/Updates/currentver.txt?t=" + Date.Now.ToLocalTime)
 
         MsgBox(versionresponse)
