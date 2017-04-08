@@ -1,10 +1,15 @@
-﻿Public Class CrashHandler
-    Public Function HandleCrash(ex As Exception)
-        Me.Show()
-        If ex.HelpLink = Nothing Then
+﻿' Created by Narod in 2017
+' This code is under the MIT License
+' Find the repository at: https://github.com/NarodGaming/narodtruckersmplauncher
+' You must keep this message at the top of all the code files.
+
+Public Class CrashHandler
+    Public Function HandleCrash(ex As Exception) ' when a crash is passed on through try & catch
+        Me.Show() ' become visible to stop program closing
+        If ex.HelpLink = Nothing Then ' to stop a nullrefrenceexception
             ex.HelpLink = "A help link could not be found."
-        End If
-        crash_TextLog.Text = "-- Narod's TruckersMP Launcher has crashed --
+        End If ' log is started
+        crash_TextLog.Text = "-- YART (Yet Another TruckersMP Launcher) has unfortunately crashed --
 
 We apologise for any inconvinience caused. Please send this bug report to Narod on TruckersMP Forums for support
 
@@ -33,4 +38,5 @@ If there is any information in this log you believe is private, please censor th
     Private Sub crash_Restart_Click(sender As Object, e As EventArgs) Handles crash_Restart.Click
         Application.Restart()
     End Sub
+
 End Class

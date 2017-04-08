@@ -1,11 +1,13 @@
-﻿Imports System.IO
-Imports System.Net
-Imports System.Text
-Imports System.Security.Cryptography
-Imports Newtonsoft.Json.Linq
-Imports Newtonsoft.Json
-Imports System.Web.Script.Serialization
-Imports Microsoft.Win32
+﻿' Created by Narod in 2017
+' This code is under the MIT License
+' Find the repository at: https://github.com/NarodGaming/narodtruckersmplauncher
+' You must keep this message at the top of all the code files.
+
+Imports System.IO ' required for checking files
+Imports System.Net ' general
+Imports System.Security.Cryptography ' comparing md5's for updating
+Imports Newtonsoft.Json.Linq ' json parsing
+Imports System.Web.Script.Serialization ' json parsing
 
 Public Class Form1
 
@@ -13,8 +15,8 @@ Public Class Form1
     ''' <summary>
     ''' Returns the file integrity checksum hash, otherwise an empty string.
     ''' </summary>
-    Public Shared Function IntegrityCheck(ByVal filePath As String) As String
-        Dim dataBuffer(BUF_SIZE - 1) As Byte
+    Public Shared Function IntegrityCheck(ByVal filePath As String) As String ' method for finding md5
+        Dim dataBuffer(BUF_SIZE - 1) As Byte ' setup variables
         Dim dataBufferDummy(BUF_SIZE - 1) As Byte
         Dim dataBytesRead As Integer = 0
         Dim hashResult As String = String.Empty
@@ -22,21 +24,21 @@ Public Class Form1
         Dim fs As FileStream = Nothing
 
         Try
-            hashAlg = New MD5CryptoServiceProvider
-            fs = New FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.None, BUF_SIZE)
+            hashAlg = New MD5CryptoServiceProvider ' create md5 algorithm
+            fs = New FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.None, BUF_SIZE) ' opens file
             Do
-                dataBytesRead = fs.Read(dataBuffer, 0, BUF_SIZE)
+                dataBytesRead = fs.Read(dataBuffer, 0, BUF_SIZE) ' read bytes
                 hashAlg.TransformBlock(dataBuffer, 0, dataBytesRead, dataBufferDummy, 0)
-            Loop Until dataBytesRead = 0
+            Loop Until dataBytesRead = 0 ' loop
             hashAlg.TransformFinalBlock(dataBuffer, 0, 0)
             hashResult = BitConverter.ToString(hashAlg.Hash).Replace("-", "").ToLower
-        Catch ex As IOException
+        Catch ex As IOException ' catch exceptions
             CrashHandler.HandleCrash(ex)
-            MsgBox("This crash is critical, this program will now close.", MsgBoxStyle.Critical, "Critical Error!")
+            MsgBox("This crash is critical, this program will now close.", MsgBoxStyle.Critical, "Critical Error!") ' required as disposing isn't avaialble
             Application.Exit()
         Catch ex As UnauthorizedAccessException
             CrashHandler.HandleCrash(ex)
-            MsgBox("This crash is critical, this program will now close.", MsgBoxStyle.Critical, "Critical Error!")
+            MsgBox("This crash is critical, this program will now close.", MsgBoxStyle.Critical, "Critical Error!") ' required as disposing isn't available
             Application.Exit()
         Finally
             If Not fs Is Nothing Then
@@ -49,17 +51,17 @@ Public Class Form1
                 hashAlg = Nothing
             End If
         End Try
-        Return hashResult
+        Return hashResult ' return the md5
     End Function
 
-    Public TickTock As Integer = 30
-    Public Excepted As Exception
-    Public NewsShown As Boolean
+    Public TickTock As Integer = 30 ' 30 second wait on the timer
+    Public Excepted As Exception ' exceptions
+    Public NewsShown As Boolean ' for checking if user has navigated off TruckersMP
 
     Public Class sresponse
         Public Property id As Integer
         Public Property game As String
-        'Public Property ip As String
+        'Public Property ip As String           these are not yet used, but may be in the future
         'Public Property port As Integer
         Public Property name As String
         Public Property shortname As String
@@ -70,9 +72,8 @@ Public Class Form1
         Public Property speedlimiter As Integer
     End Class
 
-    ' Public Class Permissions
+    'Public Class Permissions                          used, but not uncommented
     'Public Property isGameAdmin As Boolean
-    'Public Property showDetailedOnWebMaps As Boolean
     'End Class
 
     Public Class presponse
@@ -82,10 +83,10 @@ Public Class Form1
         Public Property joinDate As String
         Public Property steamID64 As Long
         Public Property groupName As String
-        'Public Property permissions As Permissions
+        'Public Property permissions As Permissions     commented out same as class
     End Class
 
-    Public Class bresponse
+    Public Class bresponse ' json
         Public Property expiration As String
         Public Property timeAdded As String
         Public Property active As Boolean
@@ -94,42 +95,44 @@ Public Class Form1
         Public Property adminID As Integer
     End Class
 
-    Public Class rresponse
+    Public Class rresponse ' json
         'Public Property error As Boolean
         Public Property rules As String
         'Public Property revision As Integer
     End Class
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim checkversion As WebClient = New WebClient()
-        checkversion.CachePolicy = New System.Net.Cache.RequestCachePolicy(Cache.RequestCacheLevel.NoCacheNoStore)
+        Dim checkversion As WebClient = New WebClient() ' creates webclient for checking version
+        checkversion.CachePolicy = New System.Net.Cache.RequestCachePolicy(Cache.RequestCacheLevel.NoCacheNoStore) ' to stop caching
         checkversion.Headers.Add("Cache-control", "no-cache")
         checkversion.Headers.Add("Cache-control", "no-store")
         checkversion.Headers.Add("pragma", "no-cache")
         checkversion.Headers.Add("Expries", "-1")
-        Dim versionresponse As String = checkversion.DownloadString("https://raw.githubusercontent.com/NarodGaming/narodtruckersmplauncher/master/Updates/currentver.txt?t=" + Date.Now.ToLocalTime)
+        Dim versionresponse As String = checkversion.DownloadString("https://raw.githubusercontent.com/NarodGaming/narodtruckersmplauncher/master/Updates/currentver.txt?t=" + Date.Now.ToLocalTime) ' adds the date to prevent caching
 
-        MsgBox(versionresponse)
-
-        If Not versionresponse = Application.ProductVersion Then
-            Dim wouldliketoupdate As MsgBoxResult = MsgBox("A new version is available, would you like to download it?", MsgBoxStyle.YesNo, "An update is available!")
+        If Not versionresponse = Application.ProductVersion Then ' if out of date
+            Dim wouldliketoupdate As MsgBoxResult = MsgBox("A new version is available, would you like to download it?", MsgBoxStyle.YesNo, "An update is available!") ' tells the user to update
             If wouldliketoupdate = MsgBoxResult.Yes Then
-                Process.Start("https://github.com/NarodGaming/narodtruckersmplauncher/releases")
+                Process.Start("https://github.com/NarodGaming/narodtruckersmplauncher/releases") ' opens download page
+                Application.Exit()
             Else
-                MsgBox("OK. Be warned though - new versions will include bugfixes, extra features and much more!", MsgBoxStyle.Information, "Information")
+                MsgBox("OK. Be warned though - new versions will include bugfixes, extra features and much more!", MsgBoxStyle.Information, "Information") ' warns the user
+                lbl_latest_launcher_ver.Text = "Latest Launcher Version: " + versionresponse + "!"
             End If
+        Else ' up to date
+            lbl_latest_launcher_ver.Text = "Latest Launcher Version: " + versionresponse
         End If
 
-        lbl_launcher_ver.Text = "Launcher Version: " + Application.ProductVersion
+        lbl_launcher_ver.Text = "Launcher Version: " + Application.ProductVersion ' sets up product version
 
         Try
-            Dim version As String = "https://api.truckersmp.com/v2/version"
-            Dim vclient As WebClient = New WebClient()
+            Dim version As String = "https://api.truckersmp.com/v2/version" ' gets TruckersMP version
+            Dim vclient As WebClient = New WebClient() ' uses webclient
             Dim vreader As StreamReader = New StreamReader(vclient.OpenRead(version))
             Dim vjson As String = vreader.ReadToEnd()
 
 
-            Dim rules As Object = New JavaScriptSerializer().Deserialize(Of Object)(vjson)
+            Dim rules As Object = New JavaScriptSerializer().Deserialize(Of Object)(vjson) ' json
             Dim vtruckersmp = rules("name")
             Dim vntruckersmp = rules("numeric")
             Dim struckersmp = rules("stage")
@@ -156,10 +159,6 @@ Public Class Form1
             ElseIf Not File.Exists("C:\ProgramData\TruckersMP\data\ats\data1.adb") Then
                 atsupdateneeded = True
             End If
-
-
-            'MsgBox(IntegrityCheck("C:\ProgramData\TruckersMP\data\ets2\data1.adb") + vbCrLf + ets2adbhash)
-            'MsgBox(IntegrityCheck("C:\ProgramData\TruckersMP\data\ats\data1.adb") + vbCrLf + atsadbhash)
 
             If ets2updateneeded = False Then
                 If Not IntegrityCheck("C:\ProgramData\TruckersMP\data\ets2\data1.adb") = ets2adbhash Then
@@ -229,7 +228,7 @@ Public Class Form1
                             soutput += id + vbCrLf + game + vbCrLf + sname + vbCrLf + sshortname + vbCrLf + sonline + vbCrLf + players + vbCrLf + queue + vbCrLf + maxplayers + vbCrLf + speedlimiter + vbCrLf + vbCrLf
 
                             Select Case sinteger
-                                Case "1"
+                                Case "1" ' this whole case should be tidied up, it uses a few hundred lines for something that could probably be shortened
                                     s1_Name.Text = sname
                                     p1_Name.Text = "Players: " + players + " / " + maxplayers
                                     g1_Name.Text = game
@@ -692,7 +691,7 @@ Public Class Form1
         pnl_settings.Visible = False
     End Function
 
-    Private Sub btn_atsmp_Click(sender As Object, e As EventArgs) Handles btn_atsmp.Click
+    Private Sub btn_atsmp_Click(sender As Object, e As EventArgs) Handles btn_atsmp.Click ' uses main launcher due to injection, need help on intergrating this
         Try
             Dim readValue = My.Computer.Registry.GetValue(
         "HKEY_LOCAL_MACHINE\SOFTWARE\TruckersMP", "InstallDir", Nothing)
@@ -717,7 +716,7 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub btn_ets2mp_Click(sender As Object, e As EventArgs) Handles btn_ets2mp.Click
+    Private Sub btn_ets2mp_Click(sender As Object, e As EventArgs) Handles btn_ets2mp.Click ' uses main launcher due to injection, need help on intergrating this
         Try
             Dim readValue = My.Computer.Registry.GetValue(
         "HKEY_LOCAL_MACHINE\SOFTWARE\TruckersMP", "InstallDir", Nothing)
@@ -744,7 +743,7 @@ Public Class Form1
 
 
 
-    'Private Sub news_Browser_Navigating(sender As Object, e As WebBrowserNavigatingEventArgs) Handles news_Browser.Navigating
+    'Private Sub news_Browser_Navigating(sender As Object, e As WebBrowserNavigatingEventArgs) Handles news_Browser.Navigating          this doesnt work, needs fixing
     'If Not e.Url.ToString.Contains("truckersmp.com") And NewsShown = True Then
     'MsgBox("Whoops! You must stay on the TruckersMP site!", MsgBoxStyle.Exclamation, "Warning!")
     'news_Browser.Navigate("https://truckersmp.com/blog")

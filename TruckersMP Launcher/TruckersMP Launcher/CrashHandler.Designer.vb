@@ -53,8 +53,8 @@ Partial Class CrashHandler
         Me.crash_Text.Name = "crash_Text"
         Me.crash_Text.Size = New System.Drawing.Size(295, 39)
         Me.crash_Text.TabIndex = 2
-        Me.crash_Text.Text = "Narod's Server Checking Tool (for TruckersMP) has crashed." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Please send us this" &
-    " report through the forums using PasteBin."
+        Me.crash_Text.Text = "YART has crashed." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Please send us this report through the forums using PasteBin" &
+    "."
         '
         'crash_Restart
         '

@@ -1187,7 +1187,7 @@ Partial Class Form1
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.ShowIcon = False
-        Me.Text = "Narod's TruckersMP Launcher"
+        Me.Text = "Yet Another TruckersMP Launcher (YART)"
         Me.pnl_server.ResumeLayout(False)
         Me.pnl_server.PerformLayout()
         Me.pnl_news.ResumeLayout(False)
