@@ -1,0 +1,31 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+TruckersMP Launcher
+</name>
+</assembly>
+<members>
+<member name="T:TruckersMP_Launcher.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:TruckersMP_Launcher.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:TruckersMP_Launcher.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:TruckersMP_Launcher.Form1.IntegrityCheck(System.String)">
+ <summary>
+ Returns the file integrity checksum hash, otherwise an empty string.
+ </summary>
+</member>
+</members>
+</doc>
