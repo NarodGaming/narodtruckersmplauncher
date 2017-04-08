@@ -101,6 +101,18 @@ Public Class Form1
     End Class
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim checkversion As WebClient = New WebClient()
+        Dim versionresponse As String = checkversion.DownloadString("https://raw.githubusercontent.com/NarodGaming/narodtruckersmplauncher/master/Updates/currentver.txt")
+
+        If Not versionresponse = Application.ProductVersion Then
+            Dim wouldliketoupdate As MsgBoxResult = MsgBox("A new version is available, would you like to download it?", MsgBoxStyle.YesNo, "An update is available!")
+            If wouldliketoupdate = MsgBoxResult.Yes Then
+                Process.Start("https://github.com/NarodGaming/narodtruckersmplauncher/releases")
+            Else
+                MsgBox("OK. Be warned though - new versions will include bugfixes, extra features and much more!", MsgBoxStyle.Information, "Information")
+            End If
+        End If
+
         lbl_launcher_ver.Text = "Launcher Version: " + Application.ProductVersion
 
         Try
