@@ -110,7 +110,7 @@ Public Class Form1
         checkversion.Headers.Add("Expries", "-1")
         Dim versionresponse As String = checkversion.DownloadString("https://raw.githubusercontent.com/NarodGaming/narodtruckersmplauncher/master/Updates/currentver.txt?t=" + Date.Now.ToLocalTime) ' adds the date to prevent caching
 
-        If Not versionresponse = Application.ProductVersion Then ' if out of date
+        If Not versionresponse = Application.ProductVersion + "-Hotfix" Then ' if out of date
             Dim wouldliketoupdate As MsgBoxResult = MsgBox("A new version is available, would you like to download it?", MsgBoxStyle.YesNo, "An update is available!") ' tells the user to update
             If wouldliketoupdate = MsgBoxResult.Yes Then
                 Process.Start("https://github.com/NarodGaming/narodtruckersmplauncher/releases") ' opens download page
@@ -123,7 +123,7 @@ Public Class Form1
             lbl_latest_launcher_ver.Text = "Latest Launcher Version: " + versionresponse
         End If
 
-        lbl_launcher_ver.Text = "Launcher Version: " + Application.ProductVersion ' sets up product version
+        lbl_launcher_ver.Text = "Launcher Version: " + Application.ProductVersion + "-Hotfix" ' sets up product version
 
         Try
             Dim version As String = "https://api.truckersmp.com/v2/version" ' gets TruckersMP version
@@ -773,12 +773,10 @@ Public Class Form1
         End Try
     End Sub
 
-
-
-    'Private Sub news_Browser_Navigating(sender As Object, e As WebBrowserNavigatingEventArgs) Handles news_Browser.Navigating          this doesnt work, needs fixing
-    'If Not e.Url.ToString.Contains("truckersmp.com") And NewsShown = True Then
-    'MsgBox("Whoops! You must stay on the TruckersMP site!", MsgBoxStyle.Exclamation, "Warning!")
-    'news_Browser.Navigate("https://truckersmp.com/blog")
-    'End If
-    'End Sub
+    Private Sub News_Browser_Navigation_Ended(sender As Object, e As EventArgs) Handles news_Browser.Navigated
+        If Not news_Browser.Url.ToString.Contains("truckersmp.com") And NewsShown = True Then
+            MsgBox("You must remain on the TruckersMP website!")
+            news_Browser.Navigate("https://truckersmp.com/blog")
+        End If
+    End Sub
 End Class
