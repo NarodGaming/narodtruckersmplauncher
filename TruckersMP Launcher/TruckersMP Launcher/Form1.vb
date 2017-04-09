@@ -250,12 +250,16 @@ Public Class Form1
                                         sp1_Name.Text = "Speedlimiter: No"
                                     End If
                                     sh1_Name.Text = sshortname
-                                    Dim spbar As Decimal = players / maxplayers * 100
-                                    t1_Total.Value = spbar
-                                    If t1_Total.Value = 100 And q1_Name.Visible = False Then
-                                        q1_Name.Visible = True
-                                        q1_Name.Text = "Full, but no queue"
-                                    End If
+                                    Try
+                                        Dim spbar As Decimal = players / maxplayers * 100
+                                        t1_Total.Value = spbar
+                                        If t1_Total.Value = 100 And q1_Name.Visible = False Then
+                                            q1_Name.Visible = True
+                                            q1_Name.Text = "Full, but no queue"
+                                        End If
+                                    Catch ex As Exception
+                                        ' caught an arithmetic overflow if 0 / 0 occurs, this is repeated
+                                    End Try
                                     sinteger += 1
                                 Case "2"
                                     s2_Name.Text = sname
@@ -279,12 +283,16 @@ Public Class Form1
                                         sp2_Name.Text = "Speedlimiter: No"
                                     End If
                                     sh2_Name.Text = sshortname
-                                    Dim spbar As Decimal = players / maxplayers * 100
-                                    t2_Total.Value = spbar
-                                    If t2_Total.Value = 100 And q2_Name.Visible = False Then
-                                        q2_Name.Visible = True
-                                        q2_Name.Text = "Full, but no queue"
-                                    End If
+                                    Try
+                                        Dim spbar As Decimal = players / maxplayers * 100
+                                        t2_Total.Value = spbar
+                                        If t2_Total.Value = 100 And q2_Name.Visible = False Then
+                                            q2_Name.Visible = True
+                                            q2_Name.Text = "Full, but no queue"
+                                        End If
+                                    Catch ex As Exception
+
+                                    End Try
                                     sinteger += 1
                                 Case "3"
                                     s3_Name.Text = sname
@@ -308,12 +316,16 @@ Public Class Form1
                                         sp3_Name.Text = "Speedlimiter: No"
                                     End If
                                     sh3_Name.Text = sshortname
-                                    Dim spbar As Decimal = players / maxplayers * 100
-                                    t3_Total.Value = spbar
-                                    If t3_Total.Value = 100 And q3_Name.Visible = False Then
-                                        q3_Name.Visible = True
-                                        q3_Name.Text = "Full, but no queue"
-                                    End If
+                                    Try
+                                        Dim spbar As Decimal = players / maxplayers * 100
+                                        t3_Total.Value = spbar
+                                        If t3_Total.Value = 100 And q3_Name.Visible = False Then
+                                            q3_Name.Visible = True
+                                            q3_Name.Text = "Full, but no queue"
+                                        End If
+                                    Catch ex As Exception
+
+                                    End Try
                                     sinteger += 1
                                 Case "4"
                                     s4_Name.Text = sname
@@ -337,12 +349,16 @@ Public Class Form1
                                         sp4_Name.Text = "Speedlimiter: No"
                                     End If
                                     sh4_Name.Text = sshortname
-                                    Dim spbar As Decimal = players / maxplayers * 100
-                                    t4_Total.Value = spbar
-                                    If t4_Total.Value = 100 And q4_Name.Visible = False Then
-                                        q4_Name.Visible = True
-                                        q4_Name.Text = "Full, but no queue"
-                                    End If
+                                    Try
+                                        Dim spbar As Decimal = players / maxplayers * 100
+                                        t4_Total.Value = spbar
+                                        If t4_Total.Value = 100 And q4_Name.Visible = False Then
+                                            q4_Name.Visible = True
+                                            q4_Name.Text = "Full, but no queue"
+                                        End If
+                                    Catch ex As Exception
+
+                                    End Try
                                     sinteger += 1
                                 Case "5"
                                     s5_Name.Text = sname
@@ -366,12 +382,16 @@ Public Class Form1
                                         sp5_Name.Text = "Speedlimiter: No"
                                     End If
                                     sh5_Name.Text = sshortname
-                                    Dim spbar As Decimal = players / maxplayers * 100
-                                    t5_Total.Value = spbar
-                                    If t5_Total.Value = 100 And q5_Name.Visible = False Then
-                                        q5_Name.Visible = True
-                                        q5_Name.Text = "Full, but no queue"
-                                    End If
+                                    Try
+                                        Dim spbar As Decimal = players / maxplayers * 100
+                                        t5_Total.Value = spbar
+                                        If t5_Total.Value = 100 And q5_Name.Visible = False Then
+                                            q5_Name.Visible = True
+                                            q5_Name.Text = "Full, but no queue"
+                                        End If
+                                    Catch ex As Exception
+
+                                    End Try
                                     sinteger += 1
                                 Case "6"
                                     s6_Name.Text = sname
@@ -395,12 +415,16 @@ Public Class Form1
                                         sp6_Name.Text = "Speedlimiter: No"
                                     End If
                                     sh6_Name.Text = sshortname
-                                    Dim spbar As Decimal = players / maxplayers * 100
-                                    t6_Total.Value = spbar
-                                    If t6_Total.Value = 100 And q6_Name.Visible = False Then
-                                        q6_Name.Visible = True
-                                        q6_Name.Text = "Full, but no queue"
-                                    End If
+                                    Try
+                                        Dim spbar As Decimal = players / maxplayers * 100
+                                        t6_Total.Value = spbar
+                                        If t6_Total.Value = 100 And q6_Name.Visible = False Then
+                                            q6_Name.Visible = True
+                                            q6_Name.Text = "Full, but no queue"
+                                        End If
+                                    Catch ex As Exception
+
+                                    End Try
                                     sinteger += 1
                                 Case "7"
                                     s7_Name.Text = sname
@@ -424,12 +448,16 @@ Public Class Form1
                                         sp7_Name.Text = "Speedlimiter: No"
                                     End If
                                     sh7_Name.Text = sshortname
-                                    Dim spbar As Decimal = players / maxplayers * 100
-                                    t7_Total.Value = spbar
-                                    If t7_Total.Value = 100 And q7_Name.Visible = False Then
-                                        q7_Name.Visible = True
-                                        q7_Name.Text = "Full, but no queue"
-                                    End If
+                                    Try
+                                        Dim spbar As Decimal = players / maxplayers * 100
+                                        t7_Total.Value = spbar
+                                        If t7_Total.Value = 100 And q7_Name.Visible = False Then
+                                            q7_Name.Visible = True
+                                            q7_Name.Text = "Full, but no queue"
+                                        End If
+                                    Catch ex As Exception
+
+                                    End Try
                                     sinteger += 1
                                 Case "8"
                                     s8_Name.Text = sname
@@ -453,12 +481,16 @@ Public Class Form1
                                         sp8_Name.Text = "Speedlimiter: No"
                                     End If
                                     sh8_Name.Text = sshortname
-                                    Dim spbar As Decimal = players / maxplayers * 100
-                                    t8_Total.Value = spbar
-                                    If t8_Total.Value = 100 And q8_Name.Visible = False Then
-                                        q8_Name.Visible = True
-                                        q8_Name.Text = "Full, but no queue"
-                                    End If
+                                    Try
+                                        Dim spbar As Decimal = players / maxplayers * 100
+                                        t8_Total.Value = spbar
+                                        If t8_Total.Value = 100 And q8_Name.Visible = False Then
+                                            q8_Name.Visible = True
+                                            q8_Name.Text = "Full, but no queue"
+                                        End If
+                                    Catch ex As Exception
+
+                                    End Try
                                     sinteger += 1
 
 
