@@ -32,14 +32,12 @@ Public Class Form1
             Loop Until dataBytesRead = 0 ' loop
             hashAlg.TransformFinalBlock(dataBuffer, 0, 0)
             hashResult = BitConverter.ToString(hashAlg.Hash).Replace("-", "").ToLower
-        Catch ex As IOException ' catch exceptions
+        Catch ex As IOException ' game file not found, should be handled earlier, but better to be safe
+            Return Nothing
+        Catch ex As UnauthorizedAccessException ' no permission
             CrashHandler.HandleCrash(ex)
-            MsgBox("This crash is critical, this program will now close.", MsgBoxStyle.Critical, "Critical Error!") ' required as disposing isn't avaialble
-            Application.Exit()
-        Catch ex As UnauthorizedAccessException
-            CrashHandler.HandleCrash(ex)
-            MsgBox("This crash is critical, this program will now close.", MsgBoxStyle.Critical, "Critical Error!") ' required as disposing isn't available
-            Application.Exit()
+            MsgBox("A security exception has been thrown, try running the launcher as an admin.")
+            Form1.Dispose()
         Finally
             If Not fs Is Nothing Then
                 fs.Close()
@@ -110,7 +108,7 @@ Public Class Form1
         checkversion.Headers.Add("Expries", "-1")
         Dim versionresponse As String = checkversion.DownloadString("https://raw.githubusercontent.com/NarodGaming/narodtruckersmplauncher/master/Updates/currentver.txt?t=" + Date.Now.ToLocalTime) ' adds the date to prevent caching
 
-        If Not versionresponse = Application.ProductVersion + "-Hotfix" Then ' if out of date
+        If Not versionresponse = Application.ProductVersion + "-Hotfix2" Then ' if out of date
             Dim wouldliketoupdate As MsgBoxResult = MsgBox("A new version is available, would you like to download it?", MsgBoxStyle.YesNo, "An update is available!") ' tells the user to update
             If wouldliketoupdate = MsgBoxResult.Yes Then
                 Process.Start("https://github.com/NarodGaming/narodtruckersmplauncher/releases") ' opens download page
@@ -123,7 +121,7 @@ Public Class Form1
             lbl_latest_launcher_ver.Text = "Latest Launcher Version: " + versionresponse
         End If
 
-        lbl_launcher_ver.Text = "Launcher Version: " + Application.ProductVersion + "-Hotfix" ' sets up product version
+        lbl_launcher_ver.Text = "Launcher Version: " + Application.ProductVersion + "-Hotfix2" ' sets up product version
 
         Try
             Dim version As String = "https://api.truckersmp.com/v2/version" ' gets TruckersMP version
@@ -156,9 +154,11 @@ Public Class Form1
 
             If Not File.Exists("C:\ProgramData\TruckersMP\data\ets2\data1.adb") Then
                 ets2updateneeded = True
-            ElseIf Not File.Exists("C:\ProgramData\TruckersMP\data\ats\data1.adb") Then
-                atsupdateneeded = True
             End If
+            If Not File.Exists("C:\ProgramData\TruckersMP\data\ats\data1.adb") Then
+                    MsgBox("Derp ats not found")
+                    atsupdateneeded = True
+                End If
 
             If ets2updateneeded = False Then
                 If Not IntegrityCheck("C:\ProgramData\TruckersMP\data\ets2\data1.adb") = ets2adbhash Then
@@ -173,10 +173,12 @@ Public Class Form1
             If ets2updateneeded = True Then
                 btn_ets2mp.Text = "Update Euro Truck Simulator 2 MP"
                 lbl_current_truckersmp_ver.Text = "Current TruckersMP Version: Out-Of-Date"
-            ElseIf atsupdateneeded = True Then
+                End If
+            If atsupdateneeded = True Then
                 btn_atsmp.Text = "Update American Truck Simulator MP"
                 lbl_current_truckersmp_ver.Text = "Current TruckersMP Version: Out-Of-Date"
-            ElseIf ets2updateneeded = False And atsupdateneeded = False Then
+                End If
+            If ets2updateneeded = False And atsupdateneeded = False Then
                 lbl_current_truckersmp_ver.Text = "Current TruckersMP Version: Up-To-Date"
             End If
 
