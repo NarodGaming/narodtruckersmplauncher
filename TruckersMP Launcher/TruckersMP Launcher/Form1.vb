@@ -156,9 +156,8 @@ Public Class Form1
                 ets2updateneeded = True
             End If
             If Not File.Exists("C:\ProgramData\TruckersMP\data\ats\data1.adb") Then
-                    MsgBox("Derp ats not found")
-                    atsupdateneeded = True
-                End If
+                atsupdateneeded = True
+            End If
 
             If ets2updateneeded = False Then
                 If Not IntegrityCheck("C:\ProgramData\TruckersMP\data\ets2\data1.adb") = ets2adbhash Then
