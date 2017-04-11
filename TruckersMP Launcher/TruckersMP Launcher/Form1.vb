@@ -100,6 +100,27 @@ Public Class Form1
     End Class
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        pnl_server.Visible = False
+
+        If My.Settings.FirstRun = True Then
+            FirstRun.Show()
+            Me.Close()
+        End If
+
+        Dim playerinfo As String = "https://api.truckersmp.com/v2/player/" + My.Settings.ID
+        Dim pclient As WebClient = New WebClient()
+        Dim preader As StreamReader = New StreamReader(pclient.OpenRead(playerinfo))
+        Dim pjson As String = preader.ReadToEnd()
+
+
+        Dim nameinfo As Object = New JavaScriptSerializer().Deserialize(Of Object)(pjson)
+        Dim response = nameinfo("response")
+        Dim pname = nameinfo("response")("name")
+        Dim avatar = nameinfo("response")("avatar")
+
+        yart_lbl_welcome_name.Text = "Welcome, " + pname
+        yart_avatar_pic.ImageLocation = avatar
+
         Dim checkversion As WebClient = New WebClient() ' creates webclient for checking version
         checkversion.CachePolicy = New System.Net.Cache.RequestCachePolicy(Cache.RequestCacheLevel.NoCacheNoStore) ' to stop caching
         checkversion.Headers.Add("Cache-control", "no-cache")
@@ -172,11 +193,11 @@ Public Class Form1
             If ets2updateneeded = True Then
                 btn_ets2mp.Text = "Update Euro Truck Simulator 2 MP"
                 lbl_current_truckersmp_ver.Text = "Current TruckersMP Version: Out-Of-Date"
-                End If
+            End If
             If atsupdateneeded = True Then
                 btn_atsmp.Text = "Update American Truck Simulator MP"
                 lbl_current_truckersmp_ver.Text = "Current TruckersMP Version: Out-Of-Date"
-                End If
+            End If
             If ets2updateneeded = False And atsupdateneeded = False Then
                 lbl_current_truckersmp_ver.Text = "Current TruckersMP Version: Up-To-Date"
             End If
@@ -545,14 +566,14 @@ Public Class Form1
     Private Sub btn_Server_Click(sender As Object, e As EventArgs) Handles btn_Server.Click
         btn_Server.Enabled = False
         btn_News.Enabled = True
-        btn_Settings.Enabled = True
+        btn_welcome.Enabled = True
         btn_Tools.Enabled = True
         btn_Play.Enabled = True
         pnl_news.Visible = False
         pnl_server.Visible = True
         pnl_tools.Visible = False
         pnl_play.Visible = False
-        pnl_settings.Visible = False
+        pnl_welcome.Visible = False
     End Sub
 
     Private Sub btn_News_Click(sender As Object, e As EventArgs) Handles btn_News.Click
@@ -561,40 +582,40 @@ Public Class Form1
 
         btn_Server.Enabled = True
         btn_News.Enabled = False
-        btn_Settings.Enabled = True
+        btn_welcome.Enabled = True
         btn_Tools.Enabled = True
         btn_Play.Enabled = True
         pnl_news.Visible = True
         pnl_server.Visible = False
         pnl_tools.Visible = False
         pnl_play.Visible = False
-        pnl_settings.Visible = False
+        pnl_welcome.Visible = False
     End Sub
 
     Private Sub btn_Tools_Click(sender As Object, e As EventArgs) Handles btn_Tools.Click
         btn_Server.Enabled = True
         btn_News.Enabled = True
-        btn_Settings.Enabled = True
+        btn_welcome.Enabled = True
         btn_Tools.Enabled = False
         btn_Play.Enabled = True
         pnl_news.Visible = False
         pnl_server.Visible = False
         pnl_tools.Visible = True
         pnl_play.Visible = False
-        pnl_settings.Visible = False
+        pnl_welcome.Visible = False
     End Sub
 
-    Private Sub btn_Settings_Click(sender As Object, e As EventArgs) Handles btn_Settings.Click
+    Private Sub btn_Settings_Click(sender As Object, e As EventArgs) Handles btn_welcome.Click
         btn_Server.Enabled = True
         btn_News.Enabled = True
-        btn_Settings.Enabled = False
+        btn_welcome.Enabled = False
         btn_Tools.Enabled = True
         btn_Play.Enabled = True
         pnl_news.Visible = False
         pnl_server.Visible = False
         pnl_tools.Visible = False
         pnl_play.Visible = False
-        pnl_settings.Visible = True
+        pnl_welcome.Visible = True
     End Sub
 
     Private Sub player_info_search_Click(sender As Object, e As EventArgs) Handles player_info_search.Click
@@ -619,7 +640,7 @@ Public Class Form1
 
             player_info_id.Text = "TruckersMP ID: " + id.ToString
             player_info_name.Text = pname.ToString
-            player_info_img.Navigate(avatar)
+            player_info_img.ImageLocation = avatar
             player_info_date.Text = "Joined TruckersMP on: " + joindate.ToString
             player_info_steamid.Text = "SteamID64: " + steamID64.ToString
             player_info_group.Text = "This user is a: " + groupname.ToString
@@ -714,14 +735,14 @@ Public Class Form1
     Public Function RulesDone()
         btn_Server.Enabled = True
         btn_News.Enabled = True
-        btn_Settings.Enabled = True
+        btn_welcome.Enabled = True
         btn_Tools.Enabled = True
         btn_Play.Enabled = False
         pnl_news.Visible = False
         pnl_server.Visible = False
         pnl_tools.Visible = False
         pnl_play.Visible = True
-        pnl_settings.Visible = False
+        pnl_welcome.Visible = False
     End Function
 
     Private Sub btn_atsmp_Click(sender As Object, e As EventArgs) Handles btn_atsmp.Click ' uses main launcher due to injection, need help on intergrating this

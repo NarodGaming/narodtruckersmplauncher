@@ -95,7 +95,7 @@ Partial Class Form1
         Me.btn_Server = New System.Windows.Forms.Button()
         Me.btn_News = New System.Windows.Forms.Button()
         Me.btn_Tools = New System.Windows.Forms.Button()
-        Me.btn_Settings = New System.Windows.Forms.Button()
+        Me.btn_welcome = New System.Windows.Forms.Button()
         Me.btn_Play = New System.Windows.Forms.Button()
         Me.pnl_news = New System.Windows.Forms.Panel()
         Me.news_Browser = New System.Windows.Forms.WebBrowser()
@@ -114,7 +114,6 @@ Partial Class Form1
         Me.player_info_steamid = New System.Windows.Forms.Label()
         Me.player_info_id = New System.Windows.Forms.Label()
         Me.player_info_name = New System.Windows.Forms.Label()
-        Me.player_info_img = New System.Windows.Forms.WebBrowser()
         Me.player_name_text = New System.Windows.Forms.TextBox()
         Me.player_info_text = New System.Windows.Forms.Label()
         Me.player_ban_activeban = New System.Windows.Forms.ToolTip(Me.components)
@@ -132,13 +131,18 @@ Partial Class Form1
         Me.lbl_truckersmp_ver = New System.Windows.Forms.Label()
         Me.lbl_launcher_ver = New System.Windows.Forms.Label()
         Me.tip_launch_lbl = New System.Windows.Forms.ToolTip(Me.components)
-        Me.pnl_settings = New System.Windows.Forms.Panel()
+        Me.pnl_welcome = New System.Windows.Forms.Panel()
         Me.lbl_credits = New System.Windows.Forms.Label()
+        Me.yart_lbl_welcome_name = New System.Windows.Forms.Label()
+        Me.yart_avatar_pic = New System.Windows.Forms.PictureBox()
+        Me.player_info_img = New System.Windows.Forms.PictureBox()
         Me.pnl_server.SuspendLayout()
         Me.pnl_news.SuspendLayout()
         Me.pnl_tools.SuspendLayout()
         Me.pnl_play.SuspendLayout()
-        Me.pnl_settings.SuspendLayout()
+        Me.pnl_welcome.SuspendLayout()
+        CType(Me.yart_avatar_pic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.player_info_img, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         's1_Name
@@ -798,8 +802,7 @@ Partial Class Form1
         '
         'btn_Server
         '
-        Me.btn_Server.Enabled = False
-        Me.btn_Server.Location = New System.Drawing.Point(1, 555)
+        Me.btn_Server.Location = New System.Drawing.Point(145, 555)
         Me.btn_Server.Name = "btn_Server"
         Me.btn_Server.Size = New System.Drawing.Size(138, 42)
         Me.btn_Server.TabIndex = 68
@@ -808,7 +811,7 @@ Partial Class Form1
         '
         'btn_News
         '
-        Me.btn_News.Location = New System.Drawing.Point(145, 555)
+        Me.btn_News.Location = New System.Drawing.Point(290, 555)
         Me.btn_News.Name = "btn_News"
         Me.btn_News.Size = New System.Drawing.Size(138, 42)
         Me.btn_News.TabIndex = 69
@@ -817,21 +820,22 @@ Partial Class Form1
         '
         'btn_Tools
         '
-        Me.btn_Tools.Location = New System.Drawing.Point(290, 555)
+        Me.btn_Tools.Location = New System.Drawing.Point(434, 555)
         Me.btn_Tools.Name = "btn_Tools"
         Me.btn_Tools.Size = New System.Drawing.Size(138, 42)
         Me.btn_Tools.TabIndex = 70
         Me.btn_Tools.Text = "Extra Tools"
         Me.btn_Tools.UseVisualStyleBackColor = True
         '
-        'btn_Settings
+        'btn_welcome
         '
-        Me.btn_Settings.Location = New System.Drawing.Point(434, 555)
-        Me.btn_Settings.Name = "btn_Settings"
-        Me.btn_Settings.Size = New System.Drawing.Size(138, 42)
-        Me.btn_Settings.TabIndex = 71
-        Me.btn_Settings.Text = "Settings"
-        Me.btn_Settings.UseVisualStyleBackColor = True
+        Me.btn_welcome.Enabled = False
+        Me.btn_welcome.Location = New System.Drawing.Point(1, 555)
+        Me.btn_welcome.Name = "btn_welcome"
+        Me.btn_welcome.Size = New System.Drawing.Size(138, 42)
+        Me.btn_welcome.TabIndex = 71
+        Me.btn_welcome.Text = "Welcome"
+        Me.btn_welcome.UseVisualStyleBackColor = True
         '
         'btn_Play
         '
@@ -864,6 +868,7 @@ Partial Class Form1
         '
         'pnl_tools
         '
+        Me.pnl_tools.Controls.Add(Me.player_info_img)
         Me.pnl_tools.Controls.Add(Me.player_ban_table)
         Me.pnl_tools.Controls.Add(Me.player_info_ban)
         Me.pnl_tools.Controls.Add(Me.player_info_search)
@@ -873,7 +878,6 @@ Partial Class Form1
         Me.pnl_tools.Controls.Add(Me.player_info_steamid)
         Me.pnl_tools.Controls.Add(Me.player_info_id)
         Me.pnl_tools.Controls.Add(Me.player_info_name)
-        Me.pnl_tools.Controls.Add(Me.player_info_img)
         Me.pnl_tools.Controls.Add(Me.player_name_text)
         Me.pnl_tools.Controls.Add(Me.player_info_text)
         Me.pnl_tools.Location = New System.Drawing.Point(1, 0)
@@ -992,18 +996,6 @@ Partial Class Form1
         Me.player_info_name.Size = New System.Drawing.Size(67, 13)
         Me.player_info_name.TabIndex = 3
         Me.player_info_name.Text = "Player Name"
-        '
-        'player_info_img
-        '
-        Me.player_info_img.AllowWebBrowserDrop = False
-        Me.player_info_img.IsWebBrowserContextMenuEnabled = False
-        Me.player_info_img.Location = New System.Drawing.Point(24, 111)
-        Me.player_info_img.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.player_info_img.Name = "player_info_img"
-        Me.player_info_img.ScrollBarsEnabled = False
-        Me.player_info_img.Size = New System.Drawing.Size(170, 170)
-        Me.player_info_img.TabIndex = 2
-        Me.player_info_img.WebBrowserShortcutsEnabled = False
         '
         'player_name_text
         '
@@ -1150,14 +1142,15 @@ Partial Class Form1
         Me.lbl_launcher_ver.TabIndex = 0
         Me.lbl_launcher_ver.Text = "Current Launcher Version: "
         '
-        'pnl_settings
+        'pnl_welcome
         '
-        Me.pnl_settings.Controls.Add(Me.lbl_credits)
-        Me.pnl_settings.Location = New System.Drawing.Point(1, 0)
-        Me.pnl_settings.Name = "pnl_settings"
-        Me.pnl_settings.Size = New System.Drawing.Size(809, 549)
-        Me.pnl_settings.TabIndex = 76
-        Me.pnl_settings.Visible = False
+        Me.pnl_welcome.Controls.Add(Me.yart_avatar_pic)
+        Me.pnl_welcome.Controls.Add(Me.yart_lbl_welcome_name)
+        Me.pnl_welcome.Controls.Add(Me.lbl_credits)
+        Me.pnl_welcome.Location = New System.Drawing.Point(1, 0)
+        Me.pnl_welcome.Name = "pnl_welcome"
+        Me.pnl_welcome.Size = New System.Drawing.Size(809, 549)
+        Me.pnl_welcome.TabIndex = 76
         '
         'lbl_credits
         '
@@ -1168,17 +1161,45 @@ Partial Class Form1
         Me.lbl_credits.TabIndex = 0
         Me.lbl_credits.Text = "This launcher is provided to you by Narod."
         '
+        'yart_lbl_welcome_name
+        '
+        Me.yart_lbl_welcome_name.AutoSize = True
+        Me.yart_lbl_welcome_name.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.yart_lbl_welcome_name.Location = New System.Drawing.Point(110, 25)
+        Me.yart_lbl_welcome_name.Name = "yart_lbl_welcome_name"
+        Me.yart_lbl_welcome_name.Size = New System.Drawing.Size(199, 31)
+        Me.yart_lbl_welcome_name.TabIndex = 1
+        Me.yart_lbl_welcome_name.Text = "Welcome, User"
+        '
+        'yart_avatar_pic
+        '
+        Me.yart_avatar_pic.Location = New System.Drawing.Point(6, 6)
+        Me.yart_avatar_pic.Name = "yart_avatar_pic"
+        Me.yart_avatar_pic.Size = New System.Drawing.Size(98, 89)
+        Me.yart_avatar_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.yart_avatar_pic.TabIndex = 2
+        Me.yart_avatar_pic.TabStop = False
+        '
+        'player_info_img
+        '
+        Me.player_info_img.Location = New System.Drawing.Point(14, 114)
+        Me.player_info_img.Name = "player_info_img"
+        Me.player_info_img.Size = New System.Drawing.Size(193, 160)
+        Me.player_info_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.player_info_img.TabIndex = 12
+        Me.player_info_img.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(809, 598)
-        Me.Controls.Add(Me.pnl_settings)
+        Me.Controls.Add(Me.pnl_welcome)
         Me.Controls.Add(Me.pnl_play)
         Me.Controls.Add(Me.pnl_tools)
         Me.Controls.Add(Me.pnl_news)
         Me.Controls.Add(Me.btn_Play)
-        Me.Controls.Add(Me.btn_Settings)
+        Me.Controls.Add(Me.btn_welcome)
         Me.Controls.Add(Me.btn_Tools)
         Me.Controls.Add(Me.btn_News)
         Me.Controls.Add(Me.btn_Server)
@@ -1195,8 +1216,10 @@ Partial Class Form1
         Me.pnl_tools.PerformLayout()
         Me.pnl_play.ResumeLayout(False)
         Me.pnl_play.PerformLayout()
-        Me.pnl_settings.ResumeLayout(False)
-        Me.pnl_settings.PerformLayout()
+        Me.pnl_welcome.ResumeLayout(False)
+        Me.pnl_welcome.PerformLayout()
+        CType(Me.yart_avatar_pic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.player_info_img, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1272,14 +1295,13 @@ Partial Class Form1
     Friend WithEvents btn_Server As Button
     Friend WithEvents btn_News As Button
     Friend WithEvents btn_Tools As Button
-    Friend WithEvents btn_Settings As Button
+    Friend WithEvents btn_welcome As Button
     Friend WithEvents btn_Play As Button
     Friend WithEvents pnl_news As Panel
     Friend WithEvents news_Browser As WebBrowser
     Friend WithEvents pnl_tools As Panel
     Friend WithEvents player_name_text As TextBox
     Friend WithEvents player_info_text As Label
-    Friend WithEvents player_info_img As WebBrowser
     Friend WithEvents player_info_admin As Label
     Friend WithEvents player_info_date As Label
     Friend WithEvents player_info_group As Label
@@ -1309,6 +1331,9 @@ Partial Class Form1
     Friend WithEvents btn_atsmp As Button
     Friend WithEvents lbl_info_launch As Label
     Friend WithEvents tip_launch_lbl As ToolTip
-    Friend WithEvents pnl_settings As Panel
+    Friend WithEvents pnl_welcome As Panel
     Friend WithEvents lbl_credits As Label
+    Friend WithEvents yart_lbl_welcome_name As Label
+    Friend WithEvents yart_avatar_pic As PictureBox
+    Friend WithEvents player_info_img As PictureBox
 End Class

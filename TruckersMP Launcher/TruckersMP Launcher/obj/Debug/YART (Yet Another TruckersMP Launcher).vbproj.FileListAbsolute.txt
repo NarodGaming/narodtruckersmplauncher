@@ -28,3 +28,4 @@ C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\Trucker
 C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART.Resources.resources
 C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART.Rules_Popup.resources
 C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART (Yet Another TruckersMP Launcher).vbproj.GenerateResource.Cache
+C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART.FirstRun.resources

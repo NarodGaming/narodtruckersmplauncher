@@ -77,6 +77,18 @@ Namespace My
                 Me("RulesShown") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ID() As String
+            Get
+                Return CType(Me("ID"),String)
+            End Get
+            Set
+                Me("ID") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

@@ -139,6 +139,9 @@
     <EmbeddedResource Include="CrashHandler.resx">
       <DependentUpon>CrashHandler.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FirstRun.resx">
+      <DependentUpon>FirstRun.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +168,15 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading_circle.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red_cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green_tick.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -22,6 +22,21 @@ Yet Another TruckersMP Launcher
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:YART.My.Resources.Resources.green_tick">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:YART.My.Resources.Resources.loading_circle">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:YART.My.Resources.Resources.red_cross">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="M:YART.Form1.IntegrityCheck(System.String)">
  <summary>
  Returns the file integrity checksum hash, otherwise an empty string.
