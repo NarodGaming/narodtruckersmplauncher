@@ -21,6 +21,7 @@ Public Class FirstRun
             yart_instructions2_lbl.Visible = True
             yart_id.Visible = True
             yart_id_status.Visible = True
+            yart_link_lbl.Visible = True
         End If
     End Sub
 

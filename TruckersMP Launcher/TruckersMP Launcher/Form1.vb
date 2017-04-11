@@ -112,14 +112,19 @@ Public Class Form1
         Dim preader As StreamReader = New StreamReader(pclient.OpenRead(playerinfo))
         Dim pjson As String = preader.ReadToEnd()
 
+        Try
+            Dim nameinfo As Object = New JavaScriptSerializer().Deserialize(Of Object)(pjson)
+            Dim response = nameinfo("response")
+            Dim pname = nameinfo("response")("name")
+            Dim avatar = nameinfo("response")("avatar")
 
-        Dim nameinfo As Object = New JavaScriptSerializer().Deserialize(Of Object)(pjson)
-        Dim response = nameinfo("response")
-        Dim pname = nameinfo("response")("name")
-        Dim avatar = nameinfo("response")("avatar")
-
-        yart_lbl_welcome_name.Text = "Welcome, " + pname
-        yart_avatar_pic.ImageLocation = avatar
+            yart_lbl_welcome_name.Text = "Welcome, " + pname
+            yart_avatar_pic.ImageLocation = avatar
+        Catch ex As Exception
+            My.Settings.FirstRun = True
+            FirstRun.Show()
+            Me.Dispose()
+        End Try
 
         Dim checkversion As WebClient = New WebClient() ' creates webclient for checking version
         checkversion.CachePolicy = New System.Net.Cache.RequestCachePolicy(Cache.RequestCacheLevel.NoCacheNoStore) ' to stop caching

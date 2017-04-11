@@ -107,6 +107,7 @@ Partial Class FirstRun
         Me.yart_link_lbl.TabIndex = 6
         Me.yart_link_lbl.TabStop = True
         Me.yart_link_lbl.Text = "SteamID64 Finder."
+        Me.yart_link_lbl.Visible = False
         '
         'FirstRun
         '

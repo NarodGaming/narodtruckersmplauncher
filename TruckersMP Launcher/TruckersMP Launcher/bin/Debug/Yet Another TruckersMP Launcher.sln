@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "Yet Another TruckersMP Launcher", "Yet Another TruckersMP Launcher.exe", "{7CE374ED-4079-4BCB-B930-9C2DFB035755}"
+	ProjectSection(DebuggerProjectSystem) = preProject
+		PortSupplier = 00000000-0000-0000-0000-000000000000
+		Executable = C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\bin\Debug\Yet Another TruckersMP Launcher.exe
+		RemoteMachine = ARRON-DESKTOP
+		StartingDirectory = C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\bin\Debug
+		Environment = Default
+		LaunchingEngine = 00000000-0000-0000-0000-000000000000
+		UseLegacyDebugEngines = No
+		LaunchSQLEngine = No
+		AttachLaunchAction = No
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CE374ED-4079-4BCB-B930-9C2DFB035755}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
