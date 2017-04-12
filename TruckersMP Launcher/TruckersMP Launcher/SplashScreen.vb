@@ -1,6 +1,6 @@
 ﻿Public Class SplashScreen
     Private Sub SplashScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        yart_version_label.Text = Application.ProductVersion + "-Hotfix2"
+        yart_version_label.Text = Application.ProductVersion + "-120417"
 
         show_splash_timer.Start()
     End Sub

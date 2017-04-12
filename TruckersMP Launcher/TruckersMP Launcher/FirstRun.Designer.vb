@@ -32,6 +32,7 @@ Partial Class FirstRun
         Me.yart_leave_button = New System.Windows.Forms.Button()
         Me.yart_instructions_tip = New System.Windows.Forms.ToolTip(Me.components)
         Me.yart_link_lbl = New System.Windows.Forms.LinkLabel()
+        Me.yart_tooltip_help = New System.Windows.Forms.Label()
         CType(Me.yart_id_status, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -53,11 +54,9 @@ Partial Class FirstRun
         Me.yart_instructions_lbl.AutoSize = True
         Me.yart_instructions_lbl.Location = New System.Drawing.Point(12, 50)
         Me.yart_instructions_lbl.Name = "yart_instructions_lbl"
-        Me.yart_instructions_lbl.Size = New System.Drawing.Size(188, 26)
+        Me.yart_instructions_lbl.Size = New System.Drawing.Size(173, 26)
         Me.yart_instructions_lbl.TabIndex = 1
-        Me.yart_instructions_lbl.Text = "We only need one thing from you," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "your TruckersMP ID, or SteamID64 (?)"
-        Me.yart_instructions_tip.SetToolTip(Me.yart_instructions_lbl, "Your TruckersMP ID or SteamID64 can be used in YART." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Use the link to the right" &
-        " to help find your SteamID64.")
+        Me.yart_instructions_lbl.Text = "We only need one thing from you," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "your TruckersMP ID, or SteamID64"
         Me.yart_instructions_lbl.Visible = False
         '
         'yart_instructions2_lbl
@@ -109,11 +108,22 @@ Partial Class FirstRun
         Me.yart_link_lbl.Text = "SteamID64 Finder."
         Me.yart_link_lbl.Visible = False
         '
+        'yart_tooltip_help
+        '
+        Me.yart_tooltip_help.AutoSize = True
+        Me.yart_tooltip_help.ForeColor = System.Drawing.Color.Blue
+        Me.yart_tooltip_help.Location = New System.Drawing.Point(184, 63)
+        Me.yart_tooltip_help.Name = "yart_tooltip_help"
+        Me.yart_tooltip_help.Size = New System.Drawing.Size(19, 13)
+        Me.yart_tooltip_help.TabIndex = 7
+        Me.yart_tooltip_help.Text = "(?)"
+        '
         'FirstRun
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(555, 408)
+        Me.Controls.Add(Me.yart_tooltip_help)
         Me.Controls.Add(Me.yart_link_lbl)
         Me.Controls.Add(Me.yart_leave_button)
         Me.Controls.Add(Me.yart_id_status)
@@ -126,6 +136,7 @@ Partial Class FirstRun
         Me.Name = "FirstRun"
         Me.ShowIcon = False
         Me.Text = "YART - First Time Setup"
+        Me.yart_instructions_tip.SetToolTip(Me, "Your TruckersMP ID or SteamID64 can be used in YART.")
         CType(Me.yart_id_status, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -141,4 +152,5 @@ Partial Class FirstRun
     Friend WithEvents yart_leave_button As Button
     Friend WithEvents yart_instructions_tip As ToolTip
     Friend WithEvents yart_link_lbl As LinkLabel
+    Friend WithEvents yart_tooltip_help As Label
 End Class
