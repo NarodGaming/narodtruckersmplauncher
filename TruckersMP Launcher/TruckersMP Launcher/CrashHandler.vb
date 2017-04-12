@@ -29,6 +29,8 @@ Program Forms: " + Application.OpenForms.ToString + "
 Program Path: " + Application.ExecutablePath + " 
 
 If there is any information in this log you believe is private, please censor this before sending it to us."
+
+        Return Nothing ' fixes a warning
     End Function
 
     Private Sub crash_Close_Click(sender As Object, e As EventArgs) Handles crash_Close.Click

@@ -37,6 +37,11 @@ Yet Another TruckersMP Launcher
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:YART.My.Resources.Resources.truckersmp_logo">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="M:YART.Form1.IntegrityCheck(System.String)">
  <summary>
  Returns the file integrity checksum hash, otherwise an empty string.

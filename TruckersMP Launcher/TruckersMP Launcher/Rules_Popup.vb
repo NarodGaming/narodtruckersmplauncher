@@ -10,6 +10,8 @@ Public Class Rules_Popup
         Me.Show() ' becomes visible
         rules_important.Focus() ' stops text from being highlighted
         rules_important.SelectionStart = rules_important.Text.Length
+
+        Return Nothing ' fixes a warning
     End Function
 
     Private Sub btn_decline_Click(sender As Object, e As EventArgs) Handles btn_decline.Click

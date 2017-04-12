@@ -100,6 +100,8 @@ Public Class Form1
     End Class
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Hide()
+
         pnl_server.Visible = False
 
         If My.Settings.FirstRun = True Then
@@ -117,13 +119,60 @@ Public Class Form1
             Dim response = nameinfo("response")
             Dim pname = nameinfo("response")("name")
             Dim avatar = nameinfo("response")("avatar")
+            Dim groupID = nameinfo("response")("groupID")
 
             yart_lbl_welcome_name.Text = "Welcome, " + pname
             yart_avatar_pic.ImageLocation = avatar
+            Select Case groupID
+                Case "1"
+                    yart_personalise_text.Text = "Welcome back. Enjoy your trucking!"
+                Case "2"
+                    yart_personalise_text.Text = "Welcome back. Thanks for your continued development of TruckersMP."
+                Case "3"
+                    yart_personalise_text.Text = "Welcome back. It's time to catch those rammers."
+                Case "4"
+                    yart_personalise_text.Text = "Welcome back. Thanks for helping manage TruckersMP."
+                Case "5"
+                    yart_personalise_text.Text = "Welcome back. Thanks for helping TruckersMP users. Enjoy your trucking."
+                Case "6"
+                    yart_personalise_text.Text = "Welcome back. -Unknown Role-"
+                Case "7"
+                    yart_personalise_text.Text = "Welcome back. -Unknown Role-"
+                Case "8"
+                    yart_personalise_text.Text = "Welcome back. It's time to catch those rammers."
+                Case "9"
+                    yart_personalise_text.Text = "Welcome back, on behalf of all TruckersMP users, thank you for previously moderating the servers and / or forums."
+                Case "10"
+                    yart_personalise_text.Text = "Welcome back. Thanks for helping manage TruckersMP."
+                Case "11"
+                    yart_personalise_text.Text = "Welcome back. Thanks for helping on the forums! Enjoy your trucking."
+                Case "12"
+                    yart_personalise_text.Text = "Welcome back. Thanks for helping manage TruckersMP."
+                Case "13"
+                    yart_personalise_text.Text = "Welcome back. -Unknown Role-"
+                Case "14"
+                    yart_personalise_text.Text = "Welcome back. Thanks for helping manage TruckersMP."
+                Case "15"
+                    yart_personalise_text.Text = "Welcome back. Hope you get some cool footage / screenshots!"
+            End Select
+
+            If yart_personalise_text.Text = "Label1" Then
+                yart_personalise_text.Text = "Welcome back. -Unknown Role- -Unknown groupID-"
+            End If
+
+        Catch timeout As WebException
+            CrashHandler.HandleCrash(timeout)
+            Me.Dispose()
         Catch ex As Exception
             My.Settings.FirstRun = True
             FirstRun.Show()
             Me.Dispose()
+        End Try
+
+        Try
+
+        Catch ex As Exception
+
         End Try
 
         Dim checkversion As WebClient = New WebClient() ' creates webclient for checking version
@@ -222,6 +271,9 @@ Public Class Form1
         Else
             refresh_Timer.Start()
         End If
+
+        Me.Show()
+        SplashScreen.Dispose()
     End Sub
 
     Private Function ServersUpdate()
@@ -695,9 +747,9 @@ Public Class Form1
                             AddMe.Text = (timeAdded)
                             AddMe.SubItems.Add(expiration)
                             If active = "True" Then
-                                AddMe.SubItems.Add("No")
-                            Else
                                 AddMe.SubItems.Add("Yes")
+                            Else
+                                AddMe.SubItems.Add("No")
                             End If
                             AddMe.SubItems.Add(reason)
                             AddMe.SubItems.Add(adminName)
@@ -748,6 +800,8 @@ Public Class Form1
         pnl_tools.Visible = False
         pnl_play.Visible = True
         pnl_welcome.Visible = False
+
+        Return Nothing ' fixes a warning
     End Function
 
     Private Sub btn_atsmp_Click(sender As Object, e As EventArgs) Handles btn_atsmp.Click ' uses main launcher due to injection, need help on intergrating this
@@ -805,5 +859,9 @@ Public Class Form1
             MsgBox("You must remain on the TruckersMP website!")
             news_Browser.Navigate("https://truckersmp.com/blog")
         End If
+    End Sub
+
+    Private Sub yart_truckersfm_play_Click(sender As Object, e As EventArgs) Handles yart_truckersfm_play.Click
+        TruckersFM.Show()
     End Sub
 End Class

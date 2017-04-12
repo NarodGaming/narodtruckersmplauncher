@@ -100,6 +100,7 @@ Partial Class Form1
         Me.pnl_news = New System.Windows.Forms.Panel()
         Me.news_Browser = New System.Windows.Forms.WebBrowser()
         Me.pnl_tools = New System.Windows.Forms.Panel()
+        Me.player_info_img = New System.Windows.Forms.PictureBox()
         Me.player_ban_table = New System.Windows.Forms.ListView()
         Me.player_ban_timeadd = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.player_ban_expire = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -132,17 +133,18 @@ Partial Class Form1
         Me.lbl_launcher_ver = New System.Windows.Forms.Label()
         Me.tip_launch_lbl = New System.Windows.Forms.ToolTip(Me.components)
         Me.pnl_welcome = New System.Windows.Forms.Panel()
-        Me.lbl_credits = New System.Windows.Forms.Label()
-        Me.yart_lbl_welcome_name = New System.Windows.Forms.Label()
+        Me.yart_truckersfm_play = New System.Windows.Forms.Button()
+        Me.yart_personalise_text = New System.Windows.Forms.Label()
         Me.yart_avatar_pic = New System.Windows.Forms.PictureBox()
-        Me.player_info_img = New System.Windows.Forms.PictureBox()
+        Me.yart_lbl_welcome_name = New System.Windows.Forms.Label()
+        Me.lbl_credits = New System.Windows.Forms.Label()
         Me.pnl_server.SuspendLayout()
         Me.pnl_news.SuspendLayout()
         Me.pnl_tools.SuspendLayout()
+        CType(Me.player_info_img, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_play.SuspendLayout()
         Me.pnl_welcome.SuspendLayout()
         CType(Me.yart_avatar_pic, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.player_info_img, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         's1_Name
@@ -886,6 +888,15 @@ Partial Class Form1
         Me.pnl_tools.TabIndex = 74
         Me.pnl_tools.Visible = False
         '
+        'player_info_img
+        '
+        Me.player_info_img.Location = New System.Drawing.Point(14, 114)
+        Me.player_info_img.Name = "player_info_img"
+        Me.player_info_img.Size = New System.Drawing.Size(193, 160)
+        Me.player_info_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.player_info_img.TabIndex = 12
+        Me.player_info_img.TabStop = False
+        '
         'player_ban_table
         '
         Me.player_ban_table.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.player_ban_timeadd, Me.player_ban_expire, Me.player_ban_active, Me.player_ban_reason, Me.player_ban_admin})
@@ -1144,6 +1155,8 @@ Partial Class Form1
         '
         'pnl_welcome
         '
+        Me.pnl_welcome.Controls.Add(Me.yart_truckersfm_play)
+        Me.pnl_welcome.Controls.Add(Me.yart_personalise_text)
         Me.pnl_welcome.Controls.Add(Me.yart_avatar_pic)
         Me.pnl_welcome.Controls.Add(Me.yart_lbl_welcome_name)
         Me.pnl_welcome.Controls.Add(Me.lbl_credits)
@@ -1152,14 +1165,33 @@ Partial Class Form1
         Me.pnl_welcome.Size = New System.Drawing.Size(809, 549)
         Me.pnl_welcome.TabIndex = 76
         '
-        'lbl_credits
+        'yart_truckersfm_play
         '
-        Me.lbl_credits.AutoSize = True
-        Me.lbl_credits.Location = New System.Drawing.Point(3, 528)
-        Me.lbl_credits.Name = "lbl_credits"
-        Me.lbl_credits.Size = New System.Drawing.Size(206, 13)
-        Me.lbl_credits.TabIndex = 0
-        Me.lbl_credits.Text = "This launcher is provided to you by Narod."
+        Me.yart_truckersfm_play.Location = New System.Drawing.Point(628, 12)
+        Me.yart_truckersfm_play.Name = "yart_truckersfm_play"
+        Me.yart_truckersfm_play.Size = New System.Drawing.Size(135, 71)
+        Me.yart_truckersfm_play.TabIndex = 4
+        Me.yart_truckersfm_play.Text = "Play TruckersFM"
+        Me.yart_truckersfm_play.UseVisualStyleBackColor = True
+        Me.yart_truckersfm_play.Visible = False
+        '
+        'yart_personalise_text
+        '
+        Me.yart_personalise_text.AutoSize = True
+        Me.yart_personalise_text.Location = New System.Drawing.Point(113, 76)
+        Me.yart_personalise_text.Name = "yart_personalise_text"
+        Me.yart_personalise_text.Size = New System.Drawing.Size(39, 13)
+        Me.yart_personalise_text.TabIndex = 3
+        Me.yart_personalise_text.Text = "Label1"
+        '
+        'yart_avatar_pic
+        '
+        Me.yart_avatar_pic.Location = New System.Drawing.Point(6, 6)
+        Me.yart_avatar_pic.Name = "yart_avatar_pic"
+        Me.yart_avatar_pic.Size = New System.Drawing.Size(98, 89)
+        Me.yart_avatar_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.yart_avatar_pic.TabIndex = 2
+        Me.yart_avatar_pic.TabStop = False
         '
         'yart_lbl_welcome_name
         '
@@ -1171,23 +1203,14 @@ Partial Class Form1
         Me.yart_lbl_welcome_name.TabIndex = 1
         Me.yart_lbl_welcome_name.Text = "Welcome, User"
         '
-        'yart_avatar_pic
+        'lbl_credits
         '
-        Me.yart_avatar_pic.Location = New System.Drawing.Point(6, 6)
-        Me.yart_avatar_pic.Name = "yart_avatar_pic"
-        Me.yart_avatar_pic.Size = New System.Drawing.Size(98, 89)
-        Me.yart_avatar_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.yart_avatar_pic.TabIndex = 2
-        Me.yart_avatar_pic.TabStop = False
-        '
-        'player_info_img
-        '
-        Me.player_info_img.Location = New System.Drawing.Point(14, 114)
-        Me.player_info_img.Name = "player_info_img"
-        Me.player_info_img.Size = New System.Drawing.Size(193, 160)
-        Me.player_info_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.player_info_img.TabIndex = 12
-        Me.player_info_img.TabStop = False
+        Me.lbl_credits.AutoSize = True
+        Me.lbl_credits.Location = New System.Drawing.Point(3, 528)
+        Me.lbl_credits.Name = "lbl_credits"
+        Me.lbl_credits.Size = New System.Drawing.Size(206, 13)
+        Me.lbl_credits.TabIndex = 0
+        Me.lbl_credits.Text = "This launcher is provided to you by Narod."
         '
         'Form1
         '
@@ -1214,12 +1237,12 @@ Partial Class Form1
         Me.pnl_news.ResumeLayout(False)
         Me.pnl_tools.ResumeLayout(False)
         Me.pnl_tools.PerformLayout()
+        CType(Me.player_info_img, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_play.ResumeLayout(False)
         Me.pnl_play.PerformLayout()
         Me.pnl_welcome.ResumeLayout(False)
         Me.pnl_welcome.PerformLayout()
         CType(Me.yart_avatar_pic, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.player_info_img, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1336,4 +1359,6 @@ Partial Class Form1
     Friend WithEvents yart_lbl_welcome_name As Label
     Friend WithEvents yart_avatar_pic As PictureBox
     Friend WithEvents player_info_img As PictureBox
+    Friend WithEvents yart_personalise_text As Label
+    Friend WithEvents yart_truckersfm_play As Button
 End Class

@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.YART.Form1
+            Me.MainForm = Global.YART.SplashScreen
         End Sub
     End Class
 End Namespace
