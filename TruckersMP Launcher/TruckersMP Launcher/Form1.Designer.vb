@@ -119,6 +119,8 @@ Partial Class Form1
         Me.player_info_text = New System.Windows.Forms.Label()
         Me.player_ban_activeban = New System.Windows.Forms.ToolTip(Me.components)
         Me.pnl_play = New System.Windows.Forms.Panel()
+        Me.yart_current_ats_ver = New System.Windows.Forms.Label()
+        Me.yart_current_ets2_ver = New System.Windows.Forms.Label()
         Me.lbl_info_launch = New System.Windows.Forms.Label()
         Me.btn_ets2sp = New System.Windows.Forms.Button()
         Me.btn_atssp = New System.Windows.Forms.Button()
@@ -1026,6 +1028,8 @@ Partial Class Form1
         '
         'pnl_play
         '
+        Me.pnl_play.Controls.Add(Me.yart_current_ats_ver)
+        Me.pnl_play.Controls.Add(Me.yart_current_ets2_ver)
         Me.pnl_play.Controls.Add(Me.lbl_info_launch)
         Me.pnl_play.Controls.Add(Me.btn_ets2sp)
         Me.pnl_play.Controls.Add(Me.btn_atssp)
@@ -1043,6 +1047,24 @@ Partial Class Form1
         Me.pnl_play.Size = New System.Drawing.Size(809, 549)
         Me.pnl_play.TabIndex = 75
         Me.pnl_play.Visible = False
+        '
+        'yart_current_ats_ver
+        '
+        Me.yart_current_ats_ver.AutoSize = True
+        Me.yart_current_ats_ver.Location = New System.Drawing.Point(282, 150)
+        Me.yart_current_ats_ver.Name = "yart_current_ats_ver"
+        Me.yart_current_ats_ver.Size = New System.Drawing.Size(106, 13)
+        Me.yart_current_ats_ver.TabIndex = 14
+        Me.yart_current_ats_ver.Text = "Current ATS Version:"
+        '
+        'yart_current_ets2_ver
+        '
+        Me.yart_current_ets2_ver.AutoSize = True
+        Me.yart_current_ets2_ver.Location = New System.Drawing.Point(280, 132)
+        Me.yart_current_ets2_ver.Name = "yart_current_ets2_ver"
+        Me.yart_current_ets2_ver.Size = New System.Drawing.Size(112, 13)
+        Me.yart_current_ets2_ver.TabIndex = 13
+        Me.yart_current_ets2_ver.Text = "Current ETS2 Version:"
         '
         'lbl_info_launch
         '
@@ -1361,4 +1383,6 @@ Partial Class Form1
     Friend WithEvents player_info_img As PictureBox
     Friend WithEvents yart_personalise_text As Label
     Friend WithEvents yart_truckersfm_play As Button
+    Friend WithEvents yart_current_ats_ver As Label
+    Friend WithEvents yart_current_ets2_ver As Label
 End Class

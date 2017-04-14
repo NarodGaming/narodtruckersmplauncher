@@ -1,34 +1,19 @@
-C:\Users\ajfau\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\bin\Debug\Yet Another TruckersMP Launcher.exe.config
-C:\Users\ajfau\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\bin\Debug\Yet Another TruckersMP Launcher.exe
-C:\Users\ajfau\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\bin\Debug\Yet Another TruckersMP Launcher.pdb
-C:\Users\ajfau\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\bin\Debug\Yet Another TruckersMP Launcher.xml
-C:\Users\ajfau\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\bin\Debug\Newtonsoft.Json.dll
-C:\Users\ajfau\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\bin\Debug\Newtonsoft.Json.xml
-C:\Users\ajfau\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART (Yet Another TruckersMP Launcher).vbprojResolveAssemblyReference.cache
-C:\Users\ajfau\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART.CrashHandler.resources
-C:\Users\ajfau\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART.Form1.resources
-C:\Users\ajfau\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART.Resources.resources
-C:\Users\ajfau\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART.Rules_Popup.resources
-C:\Users\ajfau\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART (Yet Another TruckersMP Launcher).vbproj.GenerateResource.Cache
-C:\Users\ajfau\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\Yet Another TruckersMP Launcher.exe
-C:\Users\ajfau\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\Yet Another TruckersMP Launcher.xml
-C:\Users\ajfau\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\Yet Another TruckersMP Launcher.pdb
 C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\bin\Debug\Yet Another TruckersMP Launcher.exe.config
-C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\Yet Another TruckersMP Launcher.exe
-C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\Yet Another TruckersMP Launcher.xml
-C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\Yet Another TruckersMP Launcher.pdb
 C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\bin\Debug\Yet Another TruckersMP Launcher.exe
-C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\bin\Debug\Yet Another TruckersMP Launcher.pdb
-C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\bin\Debug\Yet Another TruckersMP Launcher.xml
 C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\bin\Debug\Newtonsoft.Json.dll
 C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART (Yet Another TruckersMP Launcher).vbproj.ResolveComReference.cache
 C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART.CrashHandler.resources
+C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART.FirstRun.resources
 C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART.Form1.resources
 C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART.Resources.resources
 C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART.Rules_Popup.resources
-C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART (Yet Another TruckersMP Launcher).vbproj.GenerateResource.Cache
-C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART.FirstRun.resources
-C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART.TruckersFM.resources
-C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART (Yet Another TruckersMP Launcher).vbproj.ResolveComReference.cache
-C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART (Yet Another TruckersMP Launcher).vbprojResolveAssemblyReference.cache
 C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART.SplashScreen.resources
+C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART.TruckersFM.resources
+C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART (Yet Another TruckersMP Launcher).vbproj.GenerateResource.Cache
+C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\Yet Another TruckersMP Launcher.exe
+C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\Yet Another TruckersMP Launcher.xml
+C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\Yet Another TruckersMP Launcher.pdb
+C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\bin\Debug\Yet Another TruckersMP Launcher.pdb
+C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\bin\Debug\Yet Another TruckersMP Launcher.xml
+C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART (Yet Another TruckersMP Launcher).vbprojResolveAssemblyReference.cache

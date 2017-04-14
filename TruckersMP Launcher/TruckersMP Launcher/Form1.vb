@@ -55,6 +55,7 @@ Public Class Form1
     Public TickTock As Integer = 30 ' 30 second wait on the timer
     Public Excepted As Exception ' exceptions
     Public NewsShown As Boolean ' for checking if user has navigated off TruckersMP
+    Public FirstTime As Boolean = My.Settings.FirstRun
 
     Public Class sresponse
         Public Property id As Integer
@@ -223,6 +224,36 @@ Public Class Form1
             lbl_supp_ets2.Text = "Supported ETS2 Version: " + ets2suppver
             lbl_supp_ats.Text = "Supported ATS Version: " + atssuppver
             lbl_date_release.Text = "Latest Released on: " + timereleased
+
+            Dim ATSInstall = My.Computer.Registry.GetValue(
+    "HKEY_LOCAL_MACHINE\SOFTWARE\TruckersMP", "InstallLocationATS", Nothing) + "\bin\win_x64\amtrucks.exe"
+
+            Dim ETSInstall = My.Computer.Registry.GetValue(
+    "HKEY_LOCAL_MACHINE\SOFTWARE\TruckersMP", "InstallLocationETS2", Nothing) + "\bin\win_x64\eurotrucks2.exe"
+
+            If ATSInstall = "\bin\win_x64\amtrucks.exe" Then
+                btn_atsmp.Enabled = False
+                btn_atssp.Enabled = False
+            Else
+                Dim CurrATSVersion As FileVersionInfo = FileVersionInfo.GetVersionInfo(ATSInstall)
+                yart_current_ats_ver.Text = "Current ATS Version: " + CurrATSVersion.ProductVersion + "s"
+
+                If Not CurrATSVersion.ProductVersion + "s" = atssuppver Then
+                    yart_current_ats_ver.Text = yart_current_ats_ver.Text + "!"
+                End If
+            End If
+
+            If ETSInstall = "\bin\win_x64\eurotrucks2.exe" Then
+                btn_ets2mp.Enabled = False
+                btn_ets2sp.Enabled = False
+            Else
+                Dim CurrETS2Version As FileVersionInfo = FileVersionInfo.GetVersionInfo(ETSInstall)
+                yart_current_ets2_ver.Text = "Current ETS2 Version: " + CurrETS2Version.ProductVersion + "s"
+
+                If Not CurrETS2Version.ProductVersion + "s" = ets2suppver Then
+                    yart_current_ets2_ver.Text = yart_current_ets2_ver.Text + "!"
+                End If
+            End If
 
             Dim atsupdateneeded As Boolean = False
             Dim ets2updateneeded As Boolean = False
@@ -866,5 +897,11 @@ Public Class Form1
 
     Private Sub yart_truckersfm_play_Click(sender As Object, e As EventArgs) Handles yart_truckersfm_play.Click
         TruckersFM.Show()
+    End Sub
+
+    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If FirstTime = False Then
+            Application.Exit()
+        End If
     End Sub
 End Class
