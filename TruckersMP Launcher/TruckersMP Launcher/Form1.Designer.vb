@@ -140,6 +140,9 @@ Partial Class Form1
         Me.yart_avatar_pic = New System.Windows.Forms.PictureBox()
         Me.yart_lbl_welcome_name = New System.Windows.Forms.Label()
         Me.lbl_credits = New System.Windows.Forms.Label()
+        Me.tip_ets2_btn = New System.Windows.Forms.ToolTip(Me.components)
+        Me.tip_ats_btn = New System.Windows.Forms.ToolTip(Me.components)
+        Me.tip_truckersmp_lbl = New System.Windows.Forms.ToolTip(Me.components)
         Me.pnl_server.SuspendLayout()
         Me.pnl_news.SuspendLayout()
         Me.pnl_tools.SuspendLayout()
@@ -1385,4 +1388,7 @@ Partial Class Form1
     Friend WithEvents yart_truckersfm_play As Button
     Friend WithEvents yart_current_ats_ver As Label
     Friend WithEvents yart_current_ets2_ver As Label
+    Friend WithEvents tip_ets2_btn As ToolTip
+    Friend WithEvents tip_ats_btn As ToolTip
+    Friend WithEvents tip_truckersmp_lbl As ToolTip
 End Class

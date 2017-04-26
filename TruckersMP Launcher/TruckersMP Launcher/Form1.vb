@@ -287,6 +287,20 @@ Public Class Form1
                 lbl_current_truckersmp_ver.Text = "Current TruckersMP Version: Up-To-Date"
             End If
 
+            If atsadbhash.ToString.Contains("0000") Then
+                btn_atsmp.Text = "Open TruckersMP Launcher (ATSMP)" + vbCrLf + "(?)"
+                tip_ats_btn.SetToolTip(btn_atsmp, "YART was unable to determine the current version of TruckersMP" + vbCrLf + "This is because of the TruckersMP API not working properly... sorry!")
+                lbl_current_truckersmp_ver.Text = "Current TruckersMP Version: Unknown (?)"
+                tip_truckersmp_lbl.SetToolTip(lbl_current_truckersmp_ver, "YART was unable to determine the current version of TruckersMP" + vbCrLf + "This is because of the TruckersMP API not working properly... sorry!")
+            End If
+
+            If ets2adbhash.ToString.Contains("0000") Then
+                btn_ets2mp.Text = "Open TruckersMP Launcher (ETS2MP)" + vbCrLf + "(?)"
+                tip_ets2_btn.SetToolTip(btn_ets2mp, "YART was unable to determine the current version of TruckersMP" + vbCrLf + "This is because of the TruckersMP API not working properly... sorry!")
+                lbl_current_truckersmp_ver.Text = "Current TruckersMP Version: Unknown (?)"
+                tip_truckersmp_lbl.SetToolTip(lbl_current_truckersmp_ver, "YART was unable to determine the current version of TruckersMP" + vbCrLf + "This is because of the TruckersMP API not working properly... sorry!")
+            End If
+
         Catch ex As Exception
             CrashHandler.HandleCrash(ex)
             Me.Dispose()
