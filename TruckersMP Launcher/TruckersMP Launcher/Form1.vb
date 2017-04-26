@@ -184,7 +184,7 @@ Public Class Form1
         checkversion.Headers.Add("Expries", "-1")
         Dim versionresponse As String = checkversion.DownloadString("https://raw.githubusercontent.com/NarodGaming/narodtruckersmplauncher/master/Updates/currentver.txt?t=" + Date.Now.ToLocalTime) ' adds the date to prevent caching
 
-        If Not versionresponse = Application.ProductVersion + "-120417.Hotfix" Then ' if out of date
+        If Not versionresponse = Application.ProductVersion + "-260417" Then ' if out of date
             Dim wouldliketoupdate As MsgBoxResult = MsgBox("A new version is available, would you like to download it?", MsgBoxStyle.YesNo, "An update is available!") ' tells the user to update
             If wouldliketoupdate = MsgBoxResult.Yes Then
                 Process.Start("https://github.com/NarodGaming/narodtruckersmplauncher/releases") ' opens download page
