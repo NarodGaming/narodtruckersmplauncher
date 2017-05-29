@@ -184,7 +184,7 @@ Public Class Form1
         checkversion.Headers.Add("Expries", "-1")
         Dim versionresponse As String = checkversion.DownloadString("https://raw.githubusercontent.com/NarodGaming/narodtruckersmplauncher/master/Updates/currentver.txt?t=" + Date.Now.ToLocalTime) ' adds the date to prevent caching
 
-        If Not versionresponse = Application.ProductVersion + "-260417" Then ' if out of date
+        If Not versionresponse = Application.ProductVersion + "-290517" Then ' if out of date
             Dim wouldliketoupdate As MsgBoxResult = MsgBox("A new version is available, would you like to download it?", MsgBoxStyle.YesNo, "An update is available!") ' tells the user to update
             If wouldliketoupdate = MsgBoxResult.Yes Then
                 Process.Start("https://github.com/NarodGaming/narodtruckersmplauncher/releases") ' opens download page
@@ -197,7 +197,7 @@ Public Class Form1
             lbl_latest_launcher_ver.Text = "Latest Launcher Version: " + versionresponse
         End If
 
-        lbl_launcher_ver.Text = "Launcher Version: " + Application.ProductVersion + "-120417.Hotfix" ' sets up product version
+        lbl_launcher_ver.Text = "Launcher Version: " + Application.ProductVersion + "-290517" ' sets up product version
 
         Try
             Dim version As String = "https://api.truckersmp.com/v2/version" ' gets TruckersMP version
@@ -380,7 +380,7 @@ Public Class Form1
                                     Try
                                         Dim spbar As Decimal = players / maxplayers * 100
                                         t1_Total.Value = spbar
-                                        If t1_Total.Value = 100 And q1_Name.Visible = False Then
+                                        If t1_Total.Value = 100 And queue = "0" Then
                                             q1_Name.Visible = True
                                             q1_Name.Text = "Full, but no queue"
                                         End If
@@ -413,7 +413,7 @@ Public Class Form1
                                     Try
                                         Dim spbar As Decimal = players / maxplayers * 100
                                         t2_Total.Value = spbar
-                                        If t2_Total.Value = 100 And q2_Name.Visible = False Then
+                                        If t2_Total.Value = 100 And queue = "0" Then
                                             q2_Name.Visible = True
                                             q2_Name.Text = "Full, but no queue"
                                         End If
@@ -446,7 +446,7 @@ Public Class Form1
                                     Try
                                         Dim spbar As Decimal = players / maxplayers * 100
                                         t3_Total.Value = spbar
-                                        If t3_Total.Value = 100 And q3_Name.Visible = False Then
+                                        If t3_Total.Value = 100 And queue = "0" Then
                                             q3_Name.Visible = True
                                             q3_Name.Text = "Full, but no queue"
                                         End If
@@ -479,7 +479,7 @@ Public Class Form1
                                     Try
                                         Dim spbar As Decimal = players / maxplayers * 100
                                         t4_Total.Value = spbar
-                                        If t4_Total.Value = 100 And q4_Name.Visible = False Then
+                                        If t4_Total.Value = 100 And queue = "0" Then
                                             q4_Name.Visible = True
                                             q4_Name.Text = "Full, but no queue"
                                         End If
@@ -512,7 +512,7 @@ Public Class Form1
                                     Try
                                         Dim spbar As Decimal = players / maxplayers * 100
                                         t5_Total.Value = spbar
-                                        If t5_Total.Value = 100 And q5_Name.Visible = False Then
+                                        If t5_Total.Value = 100 And queue = "0" Then
                                             q5_Name.Visible = True
                                             q5_Name.Text = "Full, but no queue"
                                         End If
@@ -545,7 +545,7 @@ Public Class Form1
                                     Try
                                         Dim spbar As Decimal = players / maxplayers * 100
                                         t6_Total.Value = spbar
-                                        If t6_Total.Value = 100 And q6_Name.Visible = False Then
+                                        If t6_Total.Value = 100 And queue = "0" Then
                                             q6_Name.Visible = True
                                             q6_Name.Text = "Full, but no queue"
                                         End If
@@ -578,7 +578,7 @@ Public Class Form1
                                     Try
                                         Dim spbar As Decimal = players / maxplayers * 100
                                         t7_Total.Value = spbar
-                                        If t7_Total.Value = 100 And q7_Name.Visible = False Then
+                                        If t7_Total.Value = 100 And queue = "0" Then
                                             q7_Name.Visible = True
                                             q7_Name.Text = "Full, but no queue"
                                         End If
@@ -611,7 +611,7 @@ Public Class Form1
                                     Try
                                         Dim spbar As Decimal = players / maxplayers * 100
                                         t8_Total.Value = spbar
-                                        If t8_Total.Value = 100 And q8_Name.Visible = False Then
+                                        If t8_Total.Value = 100 And queue = "0" Then
                                             q8_Name.Visible = True
                                             q8_Name.Text = "Full, but no queue"
                                         End If
