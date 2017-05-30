@@ -245,7 +245,7 @@ Partial Class Form1
         'p6_Name
         '
         Me.p6_Name.AutoSize = True
-        Me.p6_Name.Location = New System.Drawing.Point(11, 424)
+        Me.p6_Name.Location = New System.Drawing.Point(11, 332)
         Me.p6_Name.Name = "p6_Name"
         Me.p6_Name.Size = New System.Drawing.Size(41, 13)
         Me.p6_Name.TabIndex = 11
@@ -254,7 +254,7 @@ Partial Class Form1
         's6_Name
         '
         Me.s6_Name.AutoSize = True
-        Me.s6_Name.Location = New System.Drawing.Point(11, 400)
+        Me.s6_Name.Location = New System.Drawing.Point(11, 308)
         Me.s6_Name.Name = "s6_Name"
         Me.s6_Name.Size = New System.Drawing.Size(69, 13)
         Me.s6_Name.TabIndex = 10
@@ -281,7 +281,7 @@ Partial Class Form1
         'p8_Name
         '
         Me.p8_Name.AutoSize = True
-        Me.p8_Name.Location = New System.Drawing.Point(11, 332)
+        Me.p8_Name.Location = New System.Drawing.Point(11, 424)
         Me.p8_Name.Name = "p8_Name"
         Me.p8_Name.Size = New System.Drawing.Size(41, 13)
         Me.p8_Name.TabIndex = 15
@@ -290,7 +290,7 @@ Partial Class Form1
         's8_Name
         '
         Me.s8_Name.AutoSize = True
-        Me.s8_Name.Location = New System.Drawing.Point(11, 308)
+        Me.s8_Name.Location = New System.Drawing.Point(11, 400)
         Me.s8_Name.Name = "s8_Name"
         Me.s8_Name.Size = New System.Drawing.Size(69, 13)
         Me.s8_Name.TabIndex = 14
@@ -308,7 +308,7 @@ Partial Class Form1
         'q1_Name
         '
         Me.q1_Name.AutoSize = True
-        Me.q1_Name.Location = New System.Drawing.Point(591, 24)
+        Me.q1_Name.Location = New System.Drawing.Point(551, 23)
         Me.q1_Name.Name = "q1_Name"
         Me.q1_Name.Size = New System.Drawing.Size(39, 13)
         Me.q1_Name.TabIndex = 17
@@ -353,7 +353,7 @@ Partial Class Form1
         'q2_Name
         '
         Me.q2_Name.AutoSize = True
-        Me.q2_Name.Location = New System.Drawing.Point(581, 89)
+        Me.q2_Name.Location = New System.Drawing.Point(551, 89)
         Me.q2_Name.Name = "q2_Name"
         Me.q2_Name.Size = New System.Drawing.Size(39, 13)
         Me.q2_Name.TabIndex = 21
@@ -389,7 +389,7 @@ Partial Class Form1
         'q3_Name
         '
         Me.q3_Name.AutoSize = True
-        Me.q3_Name.Location = New System.Drawing.Point(571, 154)
+        Me.q3_Name.Location = New System.Drawing.Point(551, 151)
         Me.q3_Name.Name = "q3_Name"
         Me.q3_Name.Size = New System.Drawing.Size(39, 13)
         Me.q3_Name.TabIndex = 25
@@ -425,7 +425,7 @@ Partial Class Form1
         'q4_Name
         '
         Me.q4_Name.AutoSize = True
-        Me.q4_Name.Location = New System.Drawing.Point(561, 213)
+        Me.q4_Name.Location = New System.Drawing.Point(551, 213)
         Me.q4_Name.Name = "q4_Name"
         Me.q4_Name.Size = New System.Drawing.Size(39, 13)
         Me.q4_Name.TabIndex = 29
@@ -479,7 +479,7 @@ Partial Class Form1
         'sp6_Name
         '
         Me.sp6_Name.AutoSize = True
-        Me.sp6_Name.Location = New System.Drawing.Point(282, 424)
+        Me.sp6_Name.Location = New System.Drawing.Point(282, 332)
         Me.sp6_Name.Name = "sp6_Name"
         Me.sp6_Name.Size = New System.Drawing.Size(48, 13)
         Me.sp6_Name.TabIndex = 39
@@ -488,7 +488,7 @@ Partial Class Form1
         'st6_Name
         '
         Me.st6_Name.AutoSize = True
-        Me.st6_Name.Location = New System.Drawing.Point(282, 400)
+        Me.st6_Name.Location = New System.Drawing.Point(282, 308)
         Me.st6_Name.Name = "st6_Name"
         Me.st6_Name.Size = New System.Drawing.Size(37, 13)
         Me.st6_Name.TabIndex = 38
@@ -497,7 +497,7 @@ Partial Class Form1
         'q6_Name
         '
         Me.q6_Name.AutoSize = True
-        Me.q6_Name.Location = New System.Drawing.Point(551, 410)
+        Me.q6_Name.Location = New System.Drawing.Point(551, 323)
         Me.q6_Name.Name = "q6_Name"
         Me.q6_Name.Size = New System.Drawing.Size(39, 13)
         Me.q6_Name.TabIndex = 37
@@ -506,7 +506,7 @@ Partial Class Form1
         'g6_Name
         '
         Me.g6_Name.AutoSize = True
-        Me.g6_Name.Location = New System.Drawing.Point(174, 400)
+        Me.g6_Name.Location = New System.Drawing.Point(174, 308)
         Me.g6_Name.Name = "g6_Name"
         Me.g6_Name.Size = New System.Drawing.Size(35, 13)
         Me.g6_Name.TabIndex = 36
@@ -533,7 +533,7 @@ Partial Class Form1
         'q7_Name
         '
         Me.q7_Name.AutoSize = True
-        Me.q7_Name.Location = New System.Drawing.Point(545, 472)
+        Me.q7_Name.Location = New System.Drawing.Point(551, 470)
         Me.q7_Name.Name = "q7_Name"
         Me.q7_Name.Size = New System.Drawing.Size(39, 13)
         Me.q7_Name.TabIndex = 41
@@ -551,7 +551,7 @@ Partial Class Form1
         'sp8_Name
         '
         Me.sp8_Name.AutoSize = True
-        Me.sp8_Name.Location = New System.Drawing.Point(282, 332)
+        Me.sp8_Name.Location = New System.Drawing.Point(282, 424)
         Me.sp8_Name.Name = "sp8_Name"
         Me.sp8_Name.Size = New System.Drawing.Size(48, 13)
         Me.sp8_Name.TabIndex = 47
@@ -560,7 +560,7 @@ Partial Class Form1
         'st8_Name
         '
         Me.st8_Name.AutoSize = True
-        Me.st8_Name.Location = New System.Drawing.Point(282, 308)
+        Me.st8_Name.Location = New System.Drawing.Point(282, 400)
         Me.st8_Name.Name = "st8_Name"
         Me.st8_Name.Size = New System.Drawing.Size(37, 13)
         Me.st8_Name.TabIndex = 46
@@ -569,7 +569,7 @@ Partial Class Form1
         'q8_Name
         '
         Me.q8_Name.AutoSize = True
-        Me.q8_Name.Location = New System.Drawing.Point(541, 323)
+        Me.q8_Name.Location = New System.Drawing.Point(551, 409)
         Me.q8_Name.Name = "q8_Name"
         Me.q8_Name.Size = New System.Drawing.Size(39, 13)
         Me.q8_Name.TabIndex = 45
@@ -578,7 +578,7 @@ Partial Class Form1
         'g8_Name
         '
         Me.g8_Name.AutoSize = True
-        Me.g8_Name.Location = New System.Drawing.Point(172, 308)
+        Me.g8_Name.Location = New System.Drawing.Point(174, 400)
         Me.g8_Name.Name = "g8_Name"
         Me.g8_Name.Size = New System.Drawing.Size(35, 13)
         Me.g8_Name.TabIndex = 44
@@ -621,7 +621,7 @@ Partial Class Form1
         '
         't6_Total
         '
-        Me.t6_Total.Location = New System.Drawing.Point(373, 400)
+        Me.t6_Total.Location = New System.Drawing.Point(373, 311)
         Me.t6_Total.Name = "t6_Total"
         Me.t6_Total.Size = New System.Drawing.Size(423, 34)
         Me.t6_Total.TabIndex = 53
@@ -635,7 +635,7 @@ Partial Class Form1
         '
         't8_Total
         '
-        Me.t8_Total.Location = New System.Drawing.Point(373, 311)
+        Me.t8_Total.Location = New System.Drawing.Point(373, 400)
         Me.t8_Total.Name = "t8_Total"
         Me.t8_Total.Size = New System.Drawing.Size(423, 34)
         Me.t8_Total.TabIndex = 55
@@ -688,7 +688,7 @@ Partial Class Form1
         'sh6_Name
         '
         Me.sh6_Name.AutoSize = True
-        Me.sh6_Name.Location = New System.Drawing.Point(172, 424)
+        Me.sh6_Name.Location = New System.Drawing.Point(172, 332)
         Me.sh6_Name.Name = "sh6_Name"
         Me.sh6_Name.Size = New System.Drawing.Size(56, 13)
         Me.sh6_Name.TabIndex = 61
@@ -706,7 +706,7 @@ Partial Class Form1
         'sh8_Name
         '
         Me.sh8_Name.AutoSize = True
-        Me.sh8_Name.Location = New System.Drawing.Point(172, 332)
+        Me.sh8_Name.Location = New System.Drawing.Point(172, 421)
         Me.sh8_Name.Name = "sh8_Name"
         Me.sh8_Name.Size = New System.Drawing.Size(56, 13)
         Me.sh8_Name.TabIndex = 63
@@ -856,7 +856,7 @@ Partial Class Form1
         'pnl_news
         '
         Me.pnl_news.Controls.Add(Me.news_Browser)
-        Me.pnl_news.Location = New System.Drawing.Point(1, 0)
+        Me.pnl_news.Location = New System.Drawing.Point(290, 552)
         Me.pnl_news.Name = "pnl_news"
         Me.pnl_news.Size = New System.Drawing.Size(812, 549)
         Me.pnl_news.TabIndex = 73
