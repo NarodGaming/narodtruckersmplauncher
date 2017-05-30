@@ -117,6 +117,7 @@ Partial Class FirstRun
         Me.yart_tooltip_help.Size = New System.Drawing.Size(19, 13)
         Me.yart_tooltip_help.TabIndex = 7
         Me.yart_tooltip_help.Text = "(?)"
+        Me.yart_tooltip_help.Visible = False
         '
         'FirstRun
         '

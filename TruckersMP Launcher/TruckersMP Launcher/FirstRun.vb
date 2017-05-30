@@ -22,6 +22,7 @@ Public Class FirstRun
             yart_id.Visible = True
             yart_id_status.Visible = True
             yart_link_lbl.Visible = True
+            yart_tooltip_help.Visible = True
         End If
     End Sub
 

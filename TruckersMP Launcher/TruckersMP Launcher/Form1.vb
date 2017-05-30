@@ -8,6 +8,7 @@ Imports System.Net ' general
 Imports System.Security.Cryptography ' comparing md5's for updating
 Imports Newtonsoft.Json.Linq ' json parsing
 Imports System.Web.Script.Serialization ' json parsing
+Imports System.Threading
 
 Public Class Form1
 
@@ -103,6 +104,10 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Hide()
 
+        If File.Exists(Application.StartupPath + "\update.bat") Then
+            File.Delete(Application.StartupPath + "\update.bat")
+        End If
+
         pnl_server.Visible = False
 
         If My.Settings.FirstRun = True Then
@@ -182,13 +187,17 @@ Public Class Form1
         checkversion.Headers.Add("Cache-control", "no-store")
         checkversion.Headers.Add("pragma", "no-cache")
         checkversion.Headers.Add("Expries", "-1")
-        Dim versionresponse As String = checkversion.DownloadString("https://raw.githubusercontent.com/NarodGaming/narodtruckersmplauncher/master/Updates/currentver.txt?t=" + Date.Now.ToLocalTime) ' adds the date to prevent caching
+        Dim versionresponse As String = checkversion.DownloadString("https://narodgaming.ml/yart/currentver.txt?t=" + Date.Now.ToLocalTime) ' adds the date to prevent caching
 
-        If Not versionresponse = Application.ProductVersion + "-290517" Then ' if out of date
+        Dim YARTVersion As String = versionresponse.Split(" ")(0)
+        Dim YARTDate As String = versionresponse.Split(" ")(1)
+
+        If Not (YARTVersion + "-" + YARTDate) = Application.ProductVersion + "-290517" Then ' if out of date
             Dim wouldliketoupdate As MsgBoxResult = MsgBox("A new version is available, would you like to download it?", MsgBoxStyle.YesNo, "An update is available!") ' tells the user to update
             If wouldliketoupdate = MsgBoxResult.Yes Then
-                Process.Start("https://github.com/NarodGaming/narodtruckersmplauncher/releases") ' opens download page
-                Application.Exit()
+                Me.Dispose()
+                Thread.Sleep(50)
+                LauncherUpdater.Show()
             Else
                 MsgBox("OK. Be warned though - new versions will include bugfixes, extra features and much more!", MsgBoxStyle.Information, "Information") ' warns the user
                 lbl_latest_launcher_ver.Text = "Latest Launcher Version: " + versionresponse + "!"

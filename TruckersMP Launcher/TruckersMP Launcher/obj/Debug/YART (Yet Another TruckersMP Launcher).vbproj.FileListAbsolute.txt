@@ -17,3 +17,4 @@ C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\Trucker
 C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\bin\Debug\Yet Another TruckersMP Launcher.pdb
 C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\bin\Debug\Yet Another TruckersMP Launcher.xml
 C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART (Yet Another TruckersMP Launcher).vbprojResolveAssemblyReference.cache
+C:\Users\ajfau_000\Documents\narodtruckersmplauncher\TruckersMP Launcher\TruckersMP Launcher\obj\Debug\YART.LauncherUpdater.resources
