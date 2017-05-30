@@ -1,2 +1,4 @@
 language: csharp
 solution: YART.sln
+sudo: required
+dist: trusty
