@@ -4,6 +4,8 @@ by NarodGaming
 
 This launcher provides all of the API functionality you could want!
 
+[![Build status](https://ci.appveyor.com/api/projects/status/672g8b6ie0ltuaqh?svg=true)](https://ci.appveyor.com/project/NarodGaming/narodtruckersmplauncher)
+
 # Features
 
 - Lookup players through TruckersMP ID and SteamID64
