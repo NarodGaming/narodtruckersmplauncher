@@ -6,20 +6,10 @@ This launcher provides all of the API functionality you could want!
 
 [![Build status](https://ci.appveyor.com/api/projects/status/672g8b6ie0ltuaqh?svg=true)](https://ci.appveyor.com/project/NarodGaming/narodtruckersmplauncher)
 
-# Features
+# Deprecation
 
-- Lookup players through TruckersMP ID and SteamID64
-- Look at others bans, if they are banned etc.
-- See if your clients need an update
-- Check the server status's
+This launcher has not been updated since 2017. Therefore, it is highly unlikely to work.
 
-# Downloading
+I would strongly recommend using the regular launcher, or a different launcher entirely.
 
-You can find releases here: https://github.com/NarodGaming/narodtruckersmplauncher/releases
-
-# Looking for help
-
-Help is needed on the following:
-
-- Autoupdating through the launcher itself, without the need for the official launcher.
-- Launching through the launcher itself, without the need for the official launcher.
+If you wish to update the launcher, you are welcome to do so. PR's will be reviewed.
