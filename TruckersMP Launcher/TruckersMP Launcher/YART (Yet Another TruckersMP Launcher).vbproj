@@ -11,8 +11,9 @@
     <AssemblyName>Yet Another TruckersMP Launcher</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -22,8 +23,10 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>Yet Another TruckersMP Launcher.xml</DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,7 +36,9 @@
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>Yet Another TruckersMP Launcher.xml</DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -114,6 +119,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -129,24 +135,6 @@
       <DependentUpon>Rules_Popup.vb</DependentUpon>
     </Compile>
     <Compile Include="Rules_Popup.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SplashScreen.Designer.vb">
-      <DependentUpon>SplashScreen.vb</DependentUpon>
-    </Compile>
-    <Compile Include="SplashScreen.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TruckersFM.Designer.vb">
-      <DependentUpon>TruckersFM.vb</DependentUpon>
-    </Compile>
-    <Compile Include="TruckersFM.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Updater.Designer.vb">
-      <DependentUpon>Updater.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Updater.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -171,12 +159,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Rules_Popup.resx">
       <DependentUpon>Rules_Popup.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SplashScreen.resx">
-      <DependentUpon>SplashScreen.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TruckersFM.resx">
-      <DependentUpon>TruckersFM.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -856,7 +856,7 @@ Partial Class Form1
         'pnl_news
         '
         Me.pnl_news.Controls.Add(Me.news_Browser)
-        Me.pnl_news.Location = New System.Drawing.Point(290, 552)
+        Me.pnl_news.Location = New System.Drawing.Point(1, 0)
         Me.pnl_news.Name = "pnl_news"
         Me.pnl_news.Size = New System.Drawing.Size(812, 549)
         Me.pnl_news.TabIndex = 73
@@ -906,6 +906,7 @@ Partial Class Form1
         '
         Me.player_ban_table.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.player_ban_timeadd, Me.player_ban_expire, Me.player_ban_active, Me.player_ban_reason, Me.player_ban_admin})
         Me.player_ban_table.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
+        Me.player_ban_table.HideSelection = False
         Me.player_ban_table.Location = New System.Drawing.Point(24, 294)
         Me.player_ban_table.MultiSelect = False
         Me.player_ban_table.Name = "player_ban_table"
@@ -1242,15 +1243,15 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(809, 598)
-        Me.Controls.Add(Me.pnl_welcome)
-        Me.Controls.Add(Me.pnl_play)
-        Me.Controls.Add(Me.pnl_tools)
         Me.Controls.Add(Me.pnl_news)
         Me.Controls.Add(Me.btn_Play)
         Me.Controls.Add(Me.btn_welcome)
         Me.Controls.Add(Me.btn_Tools)
         Me.Controls.Add(Me.btn_News)
         Me.Controls.Add(Me.btn_Server)
+        Me.Controls.Add(Me.pnl_welcome)
+        Me.Controls.Add(Me.pnl_play)
+        Me.Controls.Add(Me.pnl_tools)
         Me.Controls.Add(Me.pnl_server)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False

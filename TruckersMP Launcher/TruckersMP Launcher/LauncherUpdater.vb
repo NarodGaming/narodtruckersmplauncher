@@ -51,10 +51,10 @@ Public Class LauncherUpdater
             checkversion.Headers.Add("Cache-control", "no-store")
             checkversion.Headers.Add("pragma", "no-cache")
             checkversion.Headers.Add("Expries", "-1")
-            Dim versionresponse As String = checkversion.DownloadString("https://narodgaming.ml/yart/currentver.txt?t=" + Date.Now.ToLocalTime) ' adds the date to prevent caching
+            Dim versionresponse As String = checkversion.DownloadString("https://ngserve.games/yart/currentver.txt") ' adds the date to prevent caching
 
-            Dim YARTVersion As String = versionresponse.Split(" ")(0)
-            YartDate = versionresponse.Split(" ")(1)
+            Dim YARTVersion As String = versionresponse.Split(CChar(" "))(0)
+            YartDate = versionresponse.Split(CChar(" "))(1)
 
             yart_updating_text.Text = "YART is updating to version " + YARTVersion + "!"
             yart_updating_text.Visible = True
@@ -68,7 +68,7 @@ Public Class LauncherUpdater
 
     Private Sub download_worker_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles download_worker.DoWork
 
-        Dim YartAddress As String = "https://narodgaming.ml/yart/downloads/" + YartDate + "/YART.exe"
+        Dim YartAddress As String = "https://ngserve.games/yart/downloads/YART.exe"
 
         If File.Exists(Path.GetTempPath + "YART_NEW.exe") Then
             File.Delete(Path.GetTempPath + "YART_NEW.exe")
@@ -81,7 +81,7 @@ Public Class LauncherUpdater
         CreateRunScript()
     End Sub
 
-    Private Function CreateRunScript()
+    Private Sub CreateRunScript()
         Using sw As StreamWriter = File.CreateText(Directory.GetCurrentDirectory + "\update.bat")
             sw.WriteLine("@echo off")
             sw.WriteLine("set oldfile=%*")
@@ -93,5 +93,5 @@ Public Class LauncherUpdater
 
         Process.Start("update.bat ", Application.ExecutablePath)
         Application.Exit()
-    End Function
+    End Sub
 End Class

@@ -4,14 +4,14 @@
 ' You must keep this message at the top of all the code files.
 
 Public Class CrashHandler
-    Public Function HandleCrash(ex As Exception) ' when a crash is passed on through try & catch
+    Public Sub HandleCrash(ex As Exception) ' when a crash is passed on through try & catch
         Me.Show() ' become visible to stop program closing
         If ex.HelpLink = Nothing Then ' to stop a nullrefrenceexception
             ex.HelpLink = "A help link could not be found."
         End If ' log is started
         crash_TextLog.Text = "-- YART (Yet Another TruckersMP Launcher) has unfortunately crashed --
 
-We apologise for any inconvinience caused. Please send this bug report to Narod on TruckersMP Forums for support
+We apologise for any inconvinience caused. Please create an issue on the GitHub repository.
 
 -- Basic Crash Information --
 Exception Name: " + ex.Message + " 
@@ -28,10 +28,8 @@ Program Validity: " + Application.CompanyName + "
 Program Forms: " + Application.OpenForms.ToString + " 
 Program Path: " + Application.ExecutablePath + " 
 
-If there is any information in this log you believe is private, please censor this before sending it to us."
-
-        Return Nothing ' fixes a warning
-    End Function
+If there is any information in this log you believe is private, please censor this before sending it in."
+    End Sub
 
     Private Sub crash_Close_Click(sender As Object, e As EventArgs) Handles crash_Close.Click
         Application.Exit()

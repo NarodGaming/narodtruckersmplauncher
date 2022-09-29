@@ -5,14 +5,12 @@
 
 Public Class Rules_Popup
 
-    Public Function RecieveRules(rules As String) ' recieve rules (stops requirement of reimporting JSON
+    Public Sub RecieveRules(rules As String) ' recieve rules (stops requirement of reimporting JSON
         rules_important.Text = rules ' sets the textbox to passed through rules list
         Me.Show() ' becomes visible
         rules_important.Focus() ' stops text from being highlighted
         rules_important.SelectionStart = rules_important.Text.Length
-
-        Return Nothing ' fixes a warning
-    End Function
+    End Sub
 
     Private Sub btn_decline_Click(sender As Object, e As EventArgs) Handles btn_decline.Click
         Me.Close() ' do not accept

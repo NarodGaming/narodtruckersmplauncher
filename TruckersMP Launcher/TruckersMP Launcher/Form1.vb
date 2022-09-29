@@ -187,12 +187,12 @@ Public Class Form1
         checkversion.Headers.Add("Cache-control", "no-store")
         checkversion.Headers.Add("pragma", "no-cache")
         checkversion.Headers.Add("Expries", "-1")
-        Dim versionresponse As String = checkversion.DownloadString("https://narodgaming.ml/yart/currentver.txt?t=" + Date.Now.ToLocalTime) ' adds the date to prevent caching
+        Dim versionresponse As String = checkversion.DownloadString("https://ngserve.games/yart/currentver.txt") ' adds the date to prevent caching
 
-        Dim YARTVersion As String = versionresponse.Split(" ")(0)
-        Dim YARTDate As String = versionresponse.Split(" ")(1)
+        Dim YARTVersion As String = versionresponse.Split(CChar(" "))(0)
+        Dim YARTDate As String = versionresponse.Split(CChar(" "))(1)
 
-        If Not (YARTVersion + "-" + YARTDate) = Application.ProductVersion + "-290517" Then ' if out of date
+        If Not (YARTVersion + "-" + YARTDate) = Application.ProductVersion + "-300922" Then ' if out of date
             Dim wouldliketoupdate As MsgBoxResult = MsgBox("A new version is available, would you like to download it?", MsgBoxStyle.YesNo, "An update is available!") ' tells the user to update
             If wouldliketoupdate = MsgBoxResult.Yes Then
                 Me.Dispose()
@@ -206,7 +206,7 @@ Public Class Form1
             lbl_latest_launcher_ver.Text = "Latest Launcher Version: " + versionresponse
         End If
 
-        lbl_launcher_ver.Text = "Launcher Version: " + Application.ProductVersion + "-290517" ' sets up product version
+        lbl_launcher_ver.Text = "Launcher Version: " + Application.ProductVersion + " 300922" ' sets up product version
 
         Try
             Dim version As String = "https://api.truckersmp.com/v2/version" ' gets TruckersMP version
@@ -234,11 +234,10 @@ Public Class Form1
             lbl_supp_ats.Text = "Supported ATS Version: " + atssuppver
             lbl_date_release.Text = "Latest Released on: " + timereleased
 
-            Dim ATSInstall = My.Computer.Registry.GetValue(
-    "HKEY_LOCAL_MACHINE\SOFTWARE\TruckersMP", "InstallLocationATS", Nothing) + "\bin\win_x64\amtrucks.exe"
 
-            Dim ETSInstall = My.Computer.Registry.GetValue(
-    "HKEY_LOCAL_MACHINE\SOFTWARE\TruckersMP", "InstallLocationETS2", Nothing) + "\bin\win_x64\eurotrucks2.exe"
+            Dim ATSInstall = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\TruckersMP", "InstallLocationATS", Nothing) + "\bin\win_x64\amtrucks.exe"
+
+            Dim ETSInstall = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\TruckersMP", "InstallLocationETS2", Nothing) + "\bin\win_x64\eurotrucks2.exe"
 
             If ATSInstall = "\bin\win_x64\amtrucks.exe" Then
                 btn_atsmp.Enabled = False
@@ -330,10 +329,9 @@ Public Class Form1
         Catch ex As Exception
             ' just have to catch incase already closed by FirstRun
         End Try
-        SplashScreen.Dispose()
     End Sub
 
-    Private Function ServersUpdate()
+    Private Function ServersUpdate() As Boolean
         Try
 
             Dim serversadd As String = "https://api.truckersmp.com/v2/servers"
@@ -691,7 +689,7 @@ Public Class Form1
     End Sub
 
     Private Sub btn_News_Click(sender As Object, e As EventArgs) Handles btn_News.Click
-        news_Browser.Navigate("http://truckersmp.com/blog")
+        news_Browser.Navigate("https://truckersmp.com/blog")
         NewsShown = True
 
         btn_Server.Enabled = True
@@ -846,7 +844,7 @@ Public Class Form1
         End If
     End Sub
 
-    Public Function RulesDone()
+    Public Sub RulesDone()
         btn_Server.Enabled = True
         btn_News.Enabled = True
         btn_welcome.Enabled = True
@@ -857,16 +855,13 @@ Public Class Form1
         pnl_tools.Visible = False
         pnl_play.Visible = True
         pnl_welcome.Visible = False
-
-        Return Nothing ' fixes a warning
-    End Function
+    End Sub
 
     Private Sub btn_atsmp_Click(sender As Object, e As EventArgs) Handles btn_atsmp.Click ' uses main launcher due to injection, need help on intergrating this
         Try
-            Dim readValue = My.Computer.Registry.GetValue(
-        "HKEY_LOCAL_MACHINE\SOFTWARE\TruckersMP", "InstallDir", Nothing)
+            Dim readValue = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\TruckersMP", "InstallDir", Nothing)
 
-            Process.Start(readValue + "\Launcher.exe")
+            Process.Start(readValue.ToString + "\Launcher.exe")
             Application.Exit()
         Catch ex As Exception
             MsgBox("Could not open TruckersMP official launcher!" + vbCrLf + "Sending you to the download page...", MsgBoxStyle.Exclamation, "Error")
@@ -876,10 +871,9 @@ Public Class Form1
 
     Private Sub btn_atssp_Click(sender As Object, e As EventArgs) Handles btn_atssp.Click
         Try
-            Dim readValue = My.Computer.Registry.GetValue(
-    "HKEY_LOCAL_MACHINE\SOFTWARE\TruckersMP", "InstallLocationATS", Nothing)
+            Dim readValue = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\TruckersMP", "InstallLocationATS", Nothing)
 
-            Process.Start(readValue + "\bin\win_x64\amtrucks.exe")
+            Process.Start(readValue.ToString + "\bin\win_x64\amtrucks.exe")
             Application.Exit()
         Catch ex As Exception
             MsgBox("Could not open American Truck Simulator, is it installed?", MsgBoxStyle.Exclamation, "Error")
@@ -901,10 +895,9 @@ Public Class Form1
 
     Private Sub btn_ets2sp_Click(sender As Object, e As EventArgs) Handles btn_ets2sp.Click
         Try
-            Dim readValue = My.Computer.Registry.GetValue(
-        "HKEY_LOCAL_MACHINE\SOFTWARE\TruckersMP", "InstallLocationETS2", Nothing)
+            Dim readValue = My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\TruckersMP", "InstallLocationETS2", Nothing)
 
-            Process.Start(readValue + "\bin\win_x64\eurotrucks2.exe")
+            Process.Start(readValue.ToString + "\bin\win_x64\eurotrucks2.exe")
             Application.Exit()
         Catch ex As Exception
             MsgBox("Could not open Euro Truck Simulator 2, is it installed?", MsgBoxStyle.Exclamation, "Error")
@@ -916,10 +909,6 @@ Public Class Form1
             MsgBox("You must remain on the TruckersMP website!")
             news_Browser.Navigate("https://truckersmp.com/blog")
         End If
-    End Sub
-
-    Private Sub yart_truckersfm_play_Click(sender As Object, e As EventArgs) Handles yart_truckersfm_play.Click
-        TruckersFM.Show()
     End Sub
 
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

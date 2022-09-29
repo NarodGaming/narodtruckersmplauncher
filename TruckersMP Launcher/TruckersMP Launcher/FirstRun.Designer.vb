@@ -24,7 +24,6 @@ Partial Class FirstRun
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.yart_introduction_lbl = New System.Windows.Forms.Label()
-        Me.zoom_timer = New System.Windows.Forms.Timer(Me.components)
         Me.yart_instructions_lbl = New System.Windows.Forms.Label()
         Me.yart_instructions2_lbl = New System.Windows.Forms.Label()
         Me.yart_id = New System.Windows.Forms.TextBox()
@@ -39,15 +38,11 @@ Partial Class FirstRun
         'yart_introduction_lbl
         '
         Me.yart_introduction_lbl.AutoSize = True
-        Me.yart_introduction_lbl.Location = New System.Drawing.Point(551, 9)
+        Me.yart_introduction_lbl.Location = New System.Drawing.Point(12, 9)
         Me.yart_introduction_lbl.Name = "yart_introduction_lbl"
         Me.yart_introduction_lbl.Size = New System.Drawing.Size(367, 13)
         Me.yart_introduction_lbl.TabIndex = 0
         Me.yart_introduction_lbl.Text = "Welcome to Yet Another TruckersMP Launcher, otherwise known as YART."
-        '
-        'zoom_timer
-        '
-        Me.zoom_timer.Interval = 10
         '
         'yart_instructions_lbl
         '
@@ -57,7 +52,6 @@ Partial Class FirstRun
         Me.yart_instructions_lbl.Size = New System.Drawing.Size(173, 26)
         Me.yart_instructions_lbl.TabIndex = 1
         Me.yart_instructions_lbl.Text = "We only need one thing from you," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "your TruckersMP ID, or SteamID64"
-        Me.yart_instructions_lbl.Visible = False
         '
         'yart_instructions2_lbl
         '
@@ -67,7 +61,6 @@ Partial Class FirstRun
         Me.yart_instructions2_lbl.Size = New System.Drawing.Size(152, 13)
         Me.yart_instructions2_lbl.TabIndex = 2
         Me.yart_instructions2_lbl.Text = "Enter your ID (either one) here:"
-        Me.yart_instructions2_lbl.Visible = False
         '
         'yart_id
         '
@@ -75,7 +68,6 @@ Partial Class FirstRun
         Me.yart_id.Name = "yart_id"
         Me.yart_id.Size = New System.Drawing.Size(289, 20)
         Me.yart_id.TabIndex = 3
-        Me.yart_id.Visible = False
         '
         'yart_id_status
         '
@@ -85,7 +77,6 @@ Partial Class FirstRun
         Me.yart_id_status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.yart_id_status.TabIndex = 4
         Me.yart_id_status.TabStop = False
-        Me.yart_id_status.Visible = False
         '
         'yart_leave_button
         '
@@ -106,7 +97,6 @@ Partial Class FirstRun
         Me.yart_link_lbl.TabIndex = 6
         Me.yart_link_lbl.TabStop = True
         Me.yart_link_lbl.Text = "SteamID64 Finder."
-        Me.yart_link_lbl.Visible = False
         '
         'yart_tooltip_help
         '
@@ -117,7 +107,6 @@ Partial Class FirstRun
         Me.yart_tooltip_help.Size = New System.Drawing.Size(19, 13)
         Me.yart_tooltip_help.TabIndex = 7
         Me.yart_tooltip_help.Text = "(?)"
-        Me.yart_tooltip_help.Visible = False
         '
         'FirstRun
         '
@@ -145,7 +134,6 @@ Partial Class FirstRun
     End Sub
 
     Friend WithEvents yart_introduction_lbl As Label
-    Friend WithEvents zoom_timer As Timer
     Friend WithEvents yart_instructions_lbl As Label
     Friend WithEvents yart_instructions2_lbl As Label
     Friend WithEvents yart_id As TextBox

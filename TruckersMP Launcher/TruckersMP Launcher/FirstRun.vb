@@ -8,23 +8,6 @@ Imports System.IO
 Imports System.Web.Script.Serialization ' json parsing
 
 Public Class FirstRun
-    Private Sub FirstRun_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        zoom_timer.Start()
-    End Sub
-
-    Private Sub zoom_timer_Tick(sender As Object, e As EventArgs) Handles zoom_timer.Tick
-        If Not yart_introduction_lbl.Location.X = 12 Then
-            yart_introduction_lbl.Location = New Point(yart_introduction_lbl.Location.X - 1, yart_introduction_lbl.Location.Y)
-        Else
-            zoom_timer.Stop()
-            yart_instructions_lbl.Visible = True
-            yart_instructions2_lbl.Visible = True
-            yart_id.Visible = True
-            yart_id_status.Visible = True
-            yart_link_lbl.Visible = True
-            yart_tooltip_help.Visible = True
-        End If
-    End Sub
 
     Private Sub yart_id_TextChanged(sender As Object, e As EventArgs) Handles yart_id.TextChanged
         yart_id_status.Image = My.Resources.loading_circle
