@@ -8,7 +8,9 @@ This launcher provides all of the API functionality you could want!
 
 # Deprecation
 
-This launcher has not been updated since 2017. Therefore, it is highly unlikely to work.
+This launcher has not been updated functionality wise since 2017. Therefore, it is highly unlikely to work.
+
+It *has* had a security and general operation update in 2022, which allows the launcher to function *mostly* as it did back in 2017.
 
 I would strongly recommend using the regular launcher, or a different launcher entirely.
 
